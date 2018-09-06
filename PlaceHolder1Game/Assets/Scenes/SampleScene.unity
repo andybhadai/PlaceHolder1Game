@@ -719,7 +719,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04abfd0c8477ec54da69c80f122f9640, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: -5
+  speed: 5
 --- !u!1001 &402288087
 Prefab:
   m_ObjectHideFlags: 0
@@ -2069,7 +2069,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4821495133706918, guid: dd36ef7e63ff3d442a11ae2ee61ce077, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -1.25
       objectReference: {fileID: 0}
     - target: {fileID: 4821495133706918, guid: dd36ef7e63ff3d442a11ae2ee61ce077, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2094,6 +2094,16 @@ Prefab:
     - target: {fileID: 4821495133706918, guid: dd36ef7e63ff3d442a11ae2ee61ce077, type: 2}
       propertyPath: m_RootOrder
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114677857259495080, guid: dd36ef7e63ff3d442a11ae2ee61ce077,
+        type: 2}
+      propertyPath: speed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114058112772420124, guid: dd36ef7e63ff3d442a11ae2ee61ce077,
+        type: 2}
+      propertyPath: speed
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd36ef7e63ff3d442a11ae2ee61ce077, type: 2}
@@ -3361,7 +3371,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4469096144512044, guid: b37942f8e5449ec469a21a06d450130c, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -2.21
+      value: -1.7
       objectReference: {fileID: 0}
     - target: {fileID: 4469096144512044, guid: b37942f8e5449ec469a21a06d450130c, type: 2}
       propertyPath: m_LocalPosition.z
@@ -4055,6 +4065,16 @@ Prefab:
     - target: {fileID: 1868473409955068, guid: e9badcaa9d6335d4d869290b9d261894, type: 2}
       propertyPath: m_Name
       value: BackGround
+      objectReference: {fileID: 0}
+    - target: {fileID: 114819793622744636, guid: e9badcaa9d6335d4d869290b9d261894,
+        type: 2}
+      propertyPath: speed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114535420073187464, guid: e9badcaa9d6335d4d869290b9d261894,
+        type: 2}
+      propertyPath: speed
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9badcaa9d6335d4d869290b9d261894, type: 2}
@@ -4913,7 +4933,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04abfd0c8477ec54da69c80f122f9640, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: -5
+  speed: 5
 --- !u!4 &2020954936
 Transform:
   m_ObjectHideFlags: 0

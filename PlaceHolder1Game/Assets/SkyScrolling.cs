@@ -5,6 +5,7 @@ using UnityEngine;
 public class SkyScrolling : MonoBehaviour {
 
 	float distance;
+	public float speed;
 	
 
 	// Use this for initialization
@@ -13,8 +14,8 @@ public class SkyScrolling : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		
+	void FixedUpdate () {
+		transform.Translate (Vector2.left * speed * Time.deltaTime);
 	}
 
 	void OnBecameInvisible() {
