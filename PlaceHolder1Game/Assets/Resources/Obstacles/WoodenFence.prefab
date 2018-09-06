@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4636439470386784}
   - component: {fileID: 212547583494364052}
   - component: {fileID: 61120875052393540}
+  - component: {fileID: 114730286305999122}
   m_Layer: 0
   m_Name: WoodenFence
   m_TagString: Obstacle
@@ -35,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1680545304176020}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -10, y: -2, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -66,6 +67,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 10.41, y: 8.27}
   m_EdgeRadius: 0
+--- !u!114 &114730286305999122
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1680545304176020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e25f2619d1116f941b54d9ad786867fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MinimumPosition: 20
+  MaximumPosition: 30
 --- !u!212 &212547583494364052
 SpriteRenderer:
   m_ObjectHideFlags: 1

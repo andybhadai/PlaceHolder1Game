@@ -598,6 +598,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4436750538616190, guid: a1d1fe6c171f94b4782f0957defa6c59,
     type: 2}
   m_PrefabInternal: {fileID: 1291569011}
+--- !u!4 &299756660 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4431017052430530, guid: e7c934ee2e14677409eeec9914217d57,
+    type: 2}
+  m_PrefabInternal: {fileID: 402288087}
 --- !u!4 &302532227 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4436750538616190, guid: a1d1fe6c171f94b4782f0957defa6c59,
@@ -912,7 +917,9 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1308468064}
+  - {fileID: 299756660}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -929,6 +936,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WoodenFence: {fileID: 1680545304176020, guid: e7f0b1b8c557faa448c6154a44d15e76,
     type: 2}
+  xPos: -10
+  yPos: -2
 --- !u!1001 &484526333
 Prefab:
   m_ObjectHideFlags: 0
@@ -2867,6 +2876,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4436750538616190, guid: a1d1fe6c171f94b4782f0957defa6c59,
     type: 2}
   m_PrefabInternal: {fileID: 1277178022}
+--- !u!4 &1308468064 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4431017052430530, guid: e7c934ee2e14677409eeec9914217d57,
+    type: 2}
+  m_PrefabInternal: {fileID: 169924051}
 --- !u!1 &1322449706
 GameObject:
   m_ObjectHideFlags: 0
@@ -3543,7 +3557,7 @@ Prefab:
     - target: {fileID: 50117133167936648, guid: 8790326cdb0790247b4e6f1f774f94e9,
         type: 2}
       propertyPath: m_GravityScale
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114061142472597078, guid: 8790326cdb0790247b4e6f1f774f94e9,
         type: 2}
@@ -3553,7 +3567,7 @@ Prefab:
     - target: {fileID: 114061142472597078, guid: 8790326cdb0790247b4e6f1f774f94e9,
         type: 2}
       propertyPath: JumpForce
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 114061142472597078, guid: 8790326cdb0790247b4e6f1f774f94e9,
         type: 2}
@@ -3593,6 +3607,11 @@ Prefab:
         type: 2}
       propertyPath: m_SortingLayer
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114061142472597078, guid: 8790326cdb0790247b4e6f1f774f94e9,
+        type: 2}
+      propertyPath: JumpSpeed
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8790326cdb0790247b4e6f1f774f94e9, type: 2}
