@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour {
     private int TotalHit = 0;
     public float TimeOut = 2000;
     private bool Movable = true;
-
+    
     void Update()
     {
         // Will be set to true if the FeetPosition overlaps with ground
@@ -68,5 +68,12 @@ public class PlayerController : MonoBehaviour {
     {
         yield return new WaitForSeconds(timeOut);
         this.Movable = true;
+    }
+
+    private void GameOver()
+    {
+        int highscore = PlayerPrefs.GetInt("HighScore");
+
+        if (highscore > this.TotalDistance) PlayerPrefs.SetInt("HighScore", this.TotalDistance);
     }
 }
