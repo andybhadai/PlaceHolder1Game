@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour {
         if (!this.Movable) return;
 
         // If the player is on the ground and space is pressed, you can jump
-        if (this.IsGrounded && Input.GetKeyDown(KeyCode.Space)) GetComponent<Rigidbody2D>().velocity = Vector2.up * this.JumpForce;
+        if (this.IsGrounded && Input.GetMouseButtonDown(0)) GetComponent<Rigidbody2D>().velocity = Vector2.up * this.JumpForce;
 
         // Automatically run to the right
         this.transform.Translate(Vector3.right * this.RunSpeed * Time.deltaTime);
