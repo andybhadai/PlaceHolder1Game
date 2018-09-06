@@ -10,7 +10,6 @@ public class PlayerController : MonoBehaviour {
     public float JumpSpeed = 2f;
     public float JumpForce = 1f;
     public float HitBack = 4f;
-    public Text HighScore;
 
     public Transform FeetPosition;
     public float CheckRadius;
@@ -31,7 +30,6 @@ public class PlayerController : MonoBehaviour {
     void FixedUpdate()
     {
         this.MovePlayer();
-        this.HighScore.text = this.TotalDistance.ToString();
     }
 
     private void MovePlayer()
@@ -56,7 +54,7 @@ public class PlayerController : MonoBehaviour {
         if (collision.gameObject.tag == "Obstacle")
         {
             // Bounce player to the left when he hit an obstacle
-            GetComponent<Rigidbody2D>().velocity = Vector2.left * this.HitBack;
+            GetComponent<Rigidbody2D>().velocity = Vector2.right * this.HitBack;
             this.Movable = false;
             this.TotalHit++;
 
