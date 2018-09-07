@@ -18,6 +18,4 @@ public class ObstacleController : MonoBehaviour {
         this.WoodenFence.transform.position = new Vector3(xPos, yPos, 0);
         Instantiate(this.WoodenFence);
     }
-
-
 }

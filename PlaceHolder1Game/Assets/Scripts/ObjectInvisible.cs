@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class ObjectInvisible : MonoBehaviour {
 
-    public int MinimumPosition;
-    public int MaximumPosition;
+    public int minimumPosition;
+    public int maximumPosition;
+    public List<Sprite> sprites;
 
     void OnBecameInvisible() {
-        transform.Translate(- Random.Range(this.MinimumPosition, this.MaximumPosition), 0, 0);
+        this.GetComponent<SpriteRenderer>().sprite = sprites[Mathf.FloorToInt(Random.Range(0, sprites.Count))];
+        transform.Translate(- Random.Range(this.minimumPosition, this.maximumPosition), 0, 0);
     }
 }
