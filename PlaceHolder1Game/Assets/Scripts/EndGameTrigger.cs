@@ -11,7 +11,6 @@ public class EndGameTrigger : MonoBehaviour {
 	}
 
 	void OnBecameInvisible() {
-		Debug.Log("END GAME");
 		SceneManager.LoadScene("GameOver");
 	}
 }
