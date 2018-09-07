@@ -19,7 +19,16 @@ public class PlayerController : MonoBehaviour {
     private int TotalHit = 0;
     public float TimeOut = 2000;
     private bool Movable = true;
-    
+
+    void Start()
+    {
+        Debug.Log("Starting Unity project!");
+
+        GooglePlayGames.PlayGamesPlatform.Activate();
+
+        //this.CheckIfLoggedIn();
+    }
+
     void Update()
     {
         // Will be set to true if the FeetPosition overlaps with ground
@@ -47,6 +56,24 @@ public class PlayerController : MonoBehaviour {
     private void CalculateScore()
     {
         this.TotalDistance = (int)GetComponent<Rigidbody2D>().transform.position.x;
+    }
+
+    private void CheckIfLoggedIn()
+    {
+        if (Social.localUser.authenticated)
+        {
+            Debug.Log("You have been logged in!");
+        }
+        else
+        {
+            Social.localUser.Authenticate((bool success) =>
+            {
+                if (success)
+                {
+                    Debug.Log("Logged in!");
+                }
+            });
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
