@@ -7,9 +7,7 @@ public class ObjectInvisible : MonoBehaviour {
     public int MinimumPosition;
     public int MaximumPosition;
 
-    void OnBecameInvisible()
-    {
-        Debug.Log("Became invisible!");
+    void OnBecameInvisible() {
         transform.Translate(- Random.Range(this.MinimumPosition, this.MaximumPosition), 0, 0);
     }
 }
