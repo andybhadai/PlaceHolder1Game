@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     public Transform FeetPosition;
     public float CheckRadius;
     public LayerMask WhatIsGround;
-    private bool IsGrounded;
+    // private bool IsGrounded;
     private int TotalDistance = 0;
     private int TotalHit = 0;
     public float TimeOut = 2000;
@@ -26,6 +26,14 @@ public class PlayerController : MonoBehaviour
     private float dragDistance;
     public float dragDistancePercent;
     private bool newSwipe = false;
+
+    public float maxDashTime = 1.0f;
+    public float dashSpeed = 1.0f;
+    public float dashStoppingSpeed = 0.1f;
+    private float currentDashTime;
+    private bool hasDashed;
+    private bool DashDirection; //True = Left, False = Right
+
 
     void Start()
     {
@@ -40,8 +48,10 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        // Will be set to true if the FeetPosition overlaps with ground
-        this.IsGrounded = Physics2D.OverlapCircle(this.FeetPosition.position, this.CheckRadius, this.WhatIsGround);
+        if (IsGrounded()) {
+            hasDashed = false;
+        }
+
         this.CalculateScore();
 
         CheckSwipe();
@@ -49,8 +59,11 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        this.MovePlayer();
+        //this.MovePlayer();
+
+        UpdateDash();
     }
+
 
     private void MovePlayer()
     {
@@ -94,10 +107,12 @@ public class PlayerController : MonoBehaviour
                         if (touchRelease.x > touchPress.x)
                         {
                             // Right
+                            Dash(false);
                         }
                         else
                         {
                             // Left
+                            Dash(true);
                         }
                     }
                     else
@@ -111,6 +126,7 @@ public class PlayerController : MonoBehaviour
                         else
                         {
                             // Down
+                            Dive();
                         }
                     }
                 }
@@ -174,7 +190,44 @@ public class PlayerController : MonoBehaviour
 
     private void Jump()
     {
-        // If the player is on the ground and space is pressed, you can jump
-        if (this.IsGrounded) GetComponent<Rigidbody2D>().velocity = Vector2.up * this.JumpForce;
+        // If the player is on the ground, you can jump
+        if (IsGrounded()) GetComponent<Rigidbody2D>().velocity = Vector2.up * this.JumpForce;
+    }
+
+    private void Dive()
+    {
+        // If the player is in the air, you can jump
+        if (!IsGrounded()) GetComponent<Rigidbody2D>().velocity = Vector2.down * this.JumpForce;
+    }
+
+    private void Dash(bool left)
+    {
+        // If player is in the air, you can dash
+        if (CanDash()) {
+            if (left) DashDirection = true;
+            else DashDirection = false;
+            currentDashTime = 0.0f;
+            hasDashed = true;
+        }
+    }
+
+    private bool CanDash()
+    {
+        return (!IsGrounded() && !hasDashed);
+    }
+
+    private void UpdateDash()
+    {
+        if (currentDashTime < maxDashTime)
+        {
+            currentDashTime += dashStoppingSpeed;
+            if (DashDirection) this.transform.Translate(Vector3.left * dashSpeed * Time.deltaTime);
+            else this.transform.Translate(Vector3.right * dashSpeed * Time.deltaTime);
+        }
+    }
+
+    private bool IsGrounded()
+    {// Will be set to true if the FeetPosition overlaps with ground
+        return Physics2D.OverlapCircle(this.FeetPosition.position, this.CheckRadius, this.WhatIsGround);
     }
 }
