@@ -4,7 +4,8 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerController : MonoBehaviour {
+public class PlayerController : MonoBehaviour
+{
 
     public float RunSpeed = 2f;
     public float JumpSpeed = 2f;
@@ -23,8 +24,8 @@ public class PlayerController : MonoBehaviour {
     private Vector3 touchPress;
     private Vector3 touchRelease;
     private float dragDistance;
-    public float dragDistancePercent; 
-
+    public float dragDistancePercent;
+    private bool newSwipe = false;
 
     void Start()
     {
@@ -56,9 +57,6 @@ public class PlayerController : MonoBehaviour {
         // Do nothing if player has a cooldown
         if (!this.Movable) return;
 
-        // If the player is on the ground and space is pressed, you can jump
-        // if (this.IsGrounded && Input.GetMouseButtonDown(0)) GetComponent<Rigidbody2D>().velocity = Vector2.up * this.JumpForce;
-
         // Automatically run to the right
         this.transform.Translate(Vector3.right * this.RunSpeed * Time.deltaTime);
     }
@@ -66,35 +64,60 @@ public class PlayerController : MonoBehaviour {
     private void CheckSwipe()
     {
         // Swipe controlls
-        if (Input.touchCount == 1){ //Touch screen with 1 finger
+        if (Input.touchCount == 1)
+        { //Touch screen with 1 finger
             Touch touch = Input.GetTouch(0);
-            if (touch.phase == TouchPhase.Began){
+            if (touch.phase == TouchPhase.Began)
+            {
                 touchPress = touch.position;
                 touchRelease = touch.position;
+                newSwipe = true;
             }
-            else if (touch.phase == TouchPhase.Moved) {
+            else if (touch.phase == TouchPhase.Moved)
+            {
                 touchRelease = touch.position;
             }
+            else if (touch.phase == TouchPhase.Ended)
+            {
+                newSwipe = false;
+            }
+
             // Check if the Drag distance is bigger than dragDistance variable
-            if (Mathf.Abs(touchRelease.x - touchPress.x) > dragDistance || Mathf.Abs(touchRelease.y - touchPress.y) > dragDistance) {
-                //check if the drag is vertical or horizontal
-                if (Mathf.Abs(touchRelease.x - touchPress.x) > Mathf.Abs(touchRelease.y - touchPress.y)) {
-                    // Horizontal
-                    if (touchRelease.x > touchPress.x) {
-                        // Right
-                    } else {
-                        // Left
+            if (Mathf.Abs(touchRelease.x - touchPress.x) > dragDistance || Mathf.Abs(touchRelease.y - touchPress.y) > dragDistance)
+            {
+                if (newSwipe)
+                {
+                    //check if the drag is vertical or horizontal
+                    if (Mathf.Abs(touchRelease.x - touchPress.x) > Mathf.Abs(touchRelease.y - touchPress.y))
+                    {
+                        // Horizontal
+                        if (touchRelease.x > touchPress.x)
+                        {
+                            // Right
+                        }
+                        else
+                        {
+                            // Left
+                        }
                     }
-                } else {
-                    // Vertical
-                    if (touchRelease.y > touchPress.y) {
-                        // Up
-                        if (this.IsGrounded)GetComponent<Rigidbody2D>().velocity = Vector2.up * this.JumpForce;
-                    } else {
-                        // Down
+                    else
+                    {
+                        // Vertical
+                        if (touchRelease.y > touchPress.y)
+                        {
+                            // Up
+                            Jump();
+                        }
+                        else
+                        {
+                            // Down
+                        }
                     }
                 }
-            } else {   
+                newSwipe = false;
+            }
+            else
+            {
                 // Tap 
             }
         }
@@ -147,5 +170,11 @@ public class PlayerController : MonoBehaviour {
         int highscore = PlayerPrefs.GetInt("HighScore");
 
         if (highscore > this.TotalDistance) PlayerPrefs.SetInt("HighScore", this.TotalDistance);
+    }
+
+    private void Jump()
+    {
+        // If the player is on the ground and space is pressed, you can jump
+        if (this.IsGrounded) GetComponent<Rigidbody2D>().velocity = Vector2.up * this.JumpForce;
     }
 }
