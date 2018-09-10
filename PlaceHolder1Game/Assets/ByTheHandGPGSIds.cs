@@ -24,7 +24,7 @@
 
 public static class ByTheHandGPGSIds
 {
-        public const string leaderboard_highscore = "CgkIkPWq4pgdEAIQAA"; // <GPGSID>
+        public const string leaderboard_highscore = "CgkI6-femrAJEAIQAQ"; // <GPGSID>
 
 }
 
