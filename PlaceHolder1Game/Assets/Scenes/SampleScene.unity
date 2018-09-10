@@ -281,7 +281,7 @@ MonoBehaviour:
   WoodenFence: {fileID: 1680545304176020, guid: e7f0b1b8c557faa448c6154a44d15e76,
     type: 2}
   xPos: -10
-  yPos: -2
+  yPos: -1.5
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
