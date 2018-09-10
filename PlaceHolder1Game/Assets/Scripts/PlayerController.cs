@@ -20,6 +20,12 @@ public class PlayerController : MonoBehaviour {
     public float TimeOut = 2000;
     private bool Movable = true;
 
+    private Vector3 touchPress;
+    private Vector3 touchRelease;
+    private float dragDistance;
+    public float dragDistancePercent; 
+
+
     void Start()
     {
         Debug.Log("Starting Unity project!");
@@ -27,6 +33,8 @@ public class PlayerController : MonoBehaviour {
         GooglePlayGames.PlayGamesPlatform.Activate();
 
         //this.CheckIfLoggedIn();
+
+        dragDistance = Screen.height * dragDistancePercent / 100; //dragDistance is 15% height of the screen
     }
 
     void Update()
@@ -34,6 +42,8 @@ public class PlayerController : MonoBehaviour {
         // Will be set to true if the FeetPosition overlaps with ground
         this.IsGrounded = Physics2D.OverlapCircle(this.FeetPosition.position, this.CheckRadius, this.WhatIsGround);
         this.CalculateScore();
+
+        CheckSwipe();
     }
 
     void FixedUpdate()
@@ -47,10 +57,47 @@ public class PlayerController : MonoBehaviour {
         if (!this.Movable) return;
 
         // If the player is on the ground and space is pressed, you can jump
-        if (this.IsGrounded && Input.GetMouseButtonDown(0)) GetComponent<Rigidbody2D>().velocity = Vector2.up * this.JumpForce;
+        // if (this.IsGrounded && Input.GetMouseButtonDown(0)) GetComponent<Rigidbody2D>().velocity = Vector2.up * this.JumpForce;
 
         // Automatically run to the right
         this.transform.Translate(Vector3.right * this.RunSpeed * Time.deltaTime);
+    }
+
+    private void CheckSwipe()
+    {
+        // Swipe controlls
+        if (Input.touchCount == 1){ //Touch screen with 1 finger
+            Touch touch = Input.GetTouch(0);
+            if (touch.phase == TouchPhase.Began){
+                touchPress = touch.position;
+                touchRelease = touch.position;
+            }
+            else if (touch.phase == TouchPhase.Moved) {
+                touchRelease = touch.position;
+            }
+            // Check if the Drag distance is bigger than dragDistance variable
+            if (Mathf.Abs(touchRelease.x - touchPress.x) > dragDistance || Mathf.Abs(touchRelease.y - touchPress.y) > dragDistance) {
+                //check if the drag is vertical or horizontal
+                if (Mathf.Abs(touchRelease.x - touchPress.x) > Mathf.Abs(touchRelease.y - touchPress.y)) {
+                    // Horizontal
+                    if (touchRelease.x > touchPress.x) {
+                        // Right
+                    } else {
+                        // Left
+                    }
+                } else {
+                    // Vertical
+                    if (touchRelease.y > touchPress.y) {
+                        // Up
+                        if (this.IsGrounded)GetComponent<Rigidbody2D>().velocity = Vector2.up * this.JumpForce;
+                    } else {
+                        // Down
+                    }
+                }
+            } else {   
+                // Tap 
+            }
+        }
     }
 
     private void CalculateScore()
