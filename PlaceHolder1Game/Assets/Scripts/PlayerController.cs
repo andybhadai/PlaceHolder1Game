@@ -34,6 +34,8 @@ public class PlayerController : MonoBehaviour
     private bool hasDashed;
     private bool DashDirection; //True = Left, False = Right
 
+    public GameObject MainGame;
+
 
     void Start()
     {
@@ -221,8 +223,8 @@ public class PlayerController : MonoBehaviour
         if (currentDashTime < maxDashTime)
         {
             currentDashTime += dashStoppingSpeed;
-            if (DashDirection) this.transform.Translate(Vector3.left * dashSpeed * Time.deltaTime);
-            else this.transform.Translate(Vector3.right * dashSpeed * Time.deltaTime);
+            if (DashDirection) MainGame.transform.Translate(Vector3.left * dashSpeed * Time.deltaTime);
+            else MainGame.transform.Translate(Vector3.right * dashSpeed * Time.deltaTime);
         }
     }
 
