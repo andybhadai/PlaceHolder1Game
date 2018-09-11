@@ -11,6 +11,13 @@ public class EndGameTrigger : MonoBehaviour {
 	}
 
 	void OnBecameInvisible() {
-		SceneManager.LoadSceneAsync("GameOver");
+        this.SaveScoreLocally();
+        SceneManager.LoadSceneAsync("GameOver");
 	}
+
+    private void SaveScoreLocally()
+    {
+        PlayerPrefs.SetFloat("score", this.transform.position.x);
+        PlayerPrefs.Save();
+    }
 }
