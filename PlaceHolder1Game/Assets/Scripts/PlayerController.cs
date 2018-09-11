@@ -2,7 +2,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerController : MonoBehaviour {
+public class PlayerController : MonoBehaviour
+{
 
     public const string leaderboard_highscore = "CgkI6-femrAJEAIQAQ";
 
@@ -14,12 +15,25 @@ public class PlayerController : MonoBehaviour {
     public Transform FeetPosition;
     public float CheckRadius;
     public LayerMask WhatIsGround;
-    private bool IsGrounded;
+    // private bool IsGrounded;
     private int TotalDistance = 0;
     public float TimeOut = 2000;
     private bool Movable = true;
-
     public Text LoggedInText;
+    private Vector3 touchPress;
+    private Vector3 touchRelease;
+    private float dragDistance;
+    public float dragDistancePercent;
+    private bool newSwipe = false;
+
+    public float maxDashTime = 1.0f;
+    public float dashSpeed = 1.0f;
+    public float dashStoppingSpeed = 0.1f;
+    private float currentDashTime;
+    private bool hasDashed;
+    private bool DashDirection; //True = Left, False = Right
+
+    public GameObject MainGame;
 
     void Start()
     {
@@ -39,30 +53,101 @@ public class PlayerController : MonoBehaviour {
         {
             this.LoggedInText.text = "You are not logged in!";
         }
+
+        dragDistance = Screen.height * dragDistancePercent / 100; //dragDistance is 15% height of the screen
     }
 
     void Update()
     {
-        // Will be set to true if the FeetPosition overlaps with ground
-        this.IsGrounded = Physics2D.OverlapCircle(this.FeetPosition.position, this.CheckRadius, this.WhatIsGround);
+        if (IsGrounded()) {
+            hasDashed = false;
+        }
+
         this.CalculateScore();
+
+        CheckSwipe();
     }
 
     void FixedUpdate()
     {
-        this.MovePlayer();
+        //this.MovePlayer();
+
+        UpdateDash();
     }
+
 
     private void MovePlayer()
     {
         // Do nothing if player has a cooldown
         if (!this.Movable) return;
 
-        // If the player is on the ground and space is pressed, you can jump
-        if (this.IsGrounded && Input.GetMouseButtonDown(0)) GetComponent<Rigidbody2D>().velocity = Vector2.up * this.JumpForce;
-
         // Automatically run to the right
         this.transform.Translate(Vector3.right * this.RunSpeed * Time.deltaTime);
+    }
+
+    private void CheckSwipe()
+    {
+        // Swipe controlls
+        if (Input.touchCount == 1)
+        { //Touch screen with 1 finger
+            Touch touch = Input.GetTouch(0);
+            if (touch.phase == TouchPhase.Began)
+            {
+                touchPress = touch.position;
+                touchRelease = touch.position;
+                newSwipe = true;
+            }
+            else if (touch.phase == TouchPhase.Moved)
+            {
+                touchRelease = touch.position;
+            }
+            else if (touch.phase == TouchPhase.Ended)
+            {
+                newSwipe = false;
+            }
+
+            // Check if the Drag distance is bigger than dragDistance variable
+            if (Mathf.Abs(touchRelease.x - touchPress.x) > dragDistance || Mathf.Abs(touchRelease.y - touchPress.y) > dragDistance)
+            {
+                if (newSwipe)
+                {
+                    //check if the drag is vertical or horizontal
+                    if (Mathf.Abs(touchRelease.x - touchPress.x) > Mathf.Abs(touchRelease.y - touchPress.y))
+                    {
+                        // Horizontal
+                        if (touchRelease.x > touchPress.x)
+                        {
+                            // Right
+                            Dash(false);
+                        }
+                        else
+                        {
+                            // Left
+                            Dash(true);
+                        }
+                    }
+                    else
+                    {
+                        // Vertical
+                        if (touchRelease.y > touchPress.y)
+                        {
+                            // Up
+                            Jump();
+                        }
+                        else
+                        {
+                            // Down
+                            Dive();
+                        }
+                    }
+                }
+                newSwipe = false;
+            }
+            else
+            {
+                // Tap 
+            }
+        }
     }
 
     private void CalculateScore()
@@ -135,5 +220,48 @@ public class PlayerController : MonoBehaviour {
 
             this.LoggedInText.text = "Logging in did not work";
         }
+    }
+
+    private void Jump()
+    {
+        // If the player is on the ground, you can jump
+        if (IsGrounded()) GetComponent<Rigidbody2D>().velocity = Vector2.up * this.JumpForce;
+    }
+
+    private void Dive()
+    {
+        // If the player is in the air, you can jump
+        if (!IsGrounded()) GetComponent<Rigidbody2D>().velocity = Vector2.down * this.JumpForce;
+    }
+
+    private void Dash(bool left)
+    {
+        // If player is in the air, you can dash
+        if (CanDash()) {
+            if (left) DashDirection = true;
+            else DashDirection = false;
+            currentDashTime = 0.0f;
+            hasDashed = true;
+        }
+    }
+
+    private bool CanDash()
+    {
+        return (!IsGrounded() && !hasDashed);
+    }
+
+    private void UpdateDash()
+    {
+        if (currentDashTime < maxDashTime)
+        {
+            currentDashTime += dashStoppingSpeed;
+            if (DashDirection) MainGame.transform.Translate(Vector3.left * dashSpeed * Time.deltaTime);
+            else MainGame.transform.Translate(Vector3.right * dashSpeed * Time.deltaTime);
+        }
+    }
+
+    private bool IsGrounded()
+    {// Will be set to true if the FeetPosition overlaps with ground
+        return Physics2D.OverlapCircle(this.FeetPosition.position, this.CheckRadius, this.WhatIsGround);
     }
 }
