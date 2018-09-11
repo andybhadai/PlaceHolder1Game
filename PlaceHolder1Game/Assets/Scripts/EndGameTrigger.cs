@@ -15,4 +15,10 @@ public class EndGameTrigger : MonoBehaviour {
 			SceneManager.LoadScene("GameOver");
 		}
 	}
+
+    private void SaveScoreLocally()
+    {
+        PlayerPrefs.SetFloat("score", this.transform.position.x);
+        PlayerPrefs.Save();
+    }
 }

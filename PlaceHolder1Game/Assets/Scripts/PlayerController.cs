@@ -1,11 +1,11 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
+
+    public const string leaderboard_highscore = "CgkI6-femrAJEAIQAQ";
 
     public float RunSpeed = 2f;
     public float JumpSpeed = 2f;
@@ -17,10 +17,9 @@ public class PlayerController : MonoBehaviour
     public LayerMask WhatIsGround;
     // private bool IsGrounded;
     private int TotalDistance = 0;
-    private int TotalHit = 0;
     public float TimeOut = 2000;
     private bool Movable = true;
-
+    public Text LoggedInText;
     private Vector3 touchPress;
     private Vector3 touchRelease;
     private float dragDistance;
@@ -36,14 +35,24 @@ public class PlayerController : MonoBehaviour
 
     public GameObject MainGame;
 
-
     void Start()
     {
-        Debug.Log("Starting Unity project!");
-
         GooglePlayGames.PlayGamesPlatform.Activate();
+        //this.Login();
+    }
 
-        //this.CheckIfLoggedIn();
+    private void OnConnectionResponse(bool authenticated)
+    {
+        this.LoggedInText.text = "Getting response!";
+
+        if (authenticated)
+        {
+            this.LoggedInText.text = "You are logged in!";
+        }
+        else
+        {
+            this.LoggedInText.text = "You are not logged in!";
+        }
 
         dragDistance = Screen.height * dragDistancePercent / 100; //dragDistance is 15% height of the screen
     }
@@ -144,24 +153,7 @@ public class PlayerController : MonoBehaviour
     private void CalculateScore()
     {
         this.TotalDistance = (int)GetComponent<Rigidbody2D>().transform.position.x;
-    }
-
-    private void CheckIfLoggedIn()
-    {
-        if (Social.localUser.authenticated)
-        {
-            Debug.Log("You have been logged in!");
-        }
-        else
-        {
-            Social.localUser.Authenticate((bool success) =>
-            {
-                if (success)
-                {
-                    Debug.Log("Logged in!");
-                }
-            });
-        }
+        this.LoggedInText.text = $" YOU HAVE RUN {this.TotalDistance * -1}";
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -171,12 +163,12 @@ public class PlayerController : MonoBehaviour
             // Bounce player to the left when he hit an obstacle
             GetComponent<Rigidbody2D>().velocity = Vector2.right * this.HitBack;
             this.Movable = false;
-            this.TotalHit++;
 
             StartCoroutine(MoveAgainCoroutine(0.5f));
         }
     }
 
+    // Implemented in case the player needs to be stunned for a few seconds
     IEnumerator MoveAgainCoroutine(float timeOut)
     {
         yield return new WaitForSeconds(timeOut);
@@ -185,9 +177,49 @@ public class PlayerController : MonoBehaviour
 
     private void GameOver()
     {
-        int highscore = PlayerPrefs.GetInt("HighScore");
+        this.AddScore(leaderboard_highscore, this.TotalDistance);
+    }
 
-        if (highscore > this.TotalDistance) PlayerPrefs.SetInt("HighScore", this.TotalDistance);
+    private void AddScore(string leaderBoardId, long score)
+    {
+        Social.ReportScore(score, leaderBoardId, success => { });
+    }
+
+    private void ShowHighscores()
+    {
+        Social.ShowLeaderboardUI();
+    }
+
+    private void Login()
+    {
+        this.LoggedInText.text = "You are going to log in!";
+
+        if (Social.localUser.authenticated)
+        {
+            this.LoggedInText.text = "You are logged in!";
+        }
+        else
+        {
+            this.LoggedInText.text = "Logging in...";
+
+            // Log in to Google Games
+            Social.localUser.Authenticate(success =>
+            {
+                this.LoggedInText.text = "Callback";
+                //this.OnConnectionResponse(success);
+
+                if (success)
+                {
+                    this.LoggedInText.text = "You are logged in!";
+                }
+                else
+                {
+                    this.LoggedInText.text = "Something went wrong";
+                }
+            });
+
+            this.LoggedInText.text = "Logging in did not work";
+        }
     }
 
     private void Jump()
