@@ -118,7 +118,7 @@ public class PlayerController : MonoBehaviour
                         if (touchRelease.x > touchPress.x)
                         {
                             // Right
-                            Dash(false);
+                            //Dash(false); You cannot Dash to the right side
                         }
                         else
                         {

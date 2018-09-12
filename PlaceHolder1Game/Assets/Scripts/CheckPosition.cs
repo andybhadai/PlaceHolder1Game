@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class CheckPosition : MonoBehaviour {
 
-	GameObject mainGame;
+	public GameObject mainGame;
 
 	// Use this for initialization
 	void Start () {
-		mainGame = GameObject.Find("MainGame");
+		//mainGame = GameObject.Find("MainGame");
 	}
 	
 	// Update is called once per frame
