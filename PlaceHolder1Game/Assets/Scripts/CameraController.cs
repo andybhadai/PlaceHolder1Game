@@ -9,7 +9,7 @@ public class CameraController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		this.Offset = transform.position - this.Player.transform.position;
+		//this.Offset = transform.position - this.Player.transform.position;
 		//transform.position = new Vector3(this.Player.transform.position.x + this.Offset.x, 0, -1);
 	}
 	
