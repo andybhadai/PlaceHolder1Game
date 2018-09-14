@@ -19,7 +19,6 @@ public class PlayerController : MonoBehaviour
     private int TotalDistance = 0;
     public float TimeOut = 2000;
     private bool Movable = true;
-    public Text LoggedInText;
     private Vector3 touchPress;
     private Vector3 touchRelease;
     private float dragDistance;
@@ -40,22 +39,6 @@ public class PlayerController : MonoBehaviour
     {
         GooglePlayGames.PlayGamesPlatform.Activate();
         //this.Login();
-    }
-
-    private void OnConnectionResponse(bool authenticated)
-    {
-        this.LoggedInText.text = "Getting response!";
-
-        if (authenticated)
-        {
-            this.LoggedInText.text = "You are logged in!";
-        }
-        else
-        {
-            this.LoggedInText.text = "You are not logged in!";
-        }
-
-        dragDistance = Screen.height * dragDistancePercent / 100; //dragDistance is 15% height of the screen
     }
 
     void Update()
@@ -154,7 +137,6 @@ public class PlayerController : MonoBehaviour
     private void CalculateScore()
     {
         this.TotalDistance = (int)MainGame.transform.position.x;
-        this.LoggedInText.text = $" YOU HAVE RUN {this.TotalDistance * -1}";
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -193,33 +175,26 @@ public class PlayerController : MonoBehaviour
 
     private void Login()
     {
-        this.LoggedInText.text = "You are going to log in!";
-
         if (Social.localUser.authenticated)
         {
-            this.LoggedInText.text = "You are logged in!";
+            // moet nog wat komen hier
         }
         else
         {
-            this.LoggedInText.text = "Logging in...";
-
             // Log in to Google Games
             Social.localUser.Authenticate(success =>
             {
-                this.LoggedInText.text = "Callback";
                 //this.OnConnectionResponse(success);
 
                 if (success)
                 {
-                    this.LoggedInText.text = "You are logged in!";
+
                 }
                 else
                 {
-                    this.LoggedInText.text = "Something went wrong";
+                    
                 }
             });
-
-            this.LoggedInText.text = "Logging in did not work";
         }
     }
 
