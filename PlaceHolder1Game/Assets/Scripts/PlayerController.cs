@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour
     public float dashSpeed = 1.0f;
     public float dashStoppingSpeed = 0.1f;
     private float currentDashTime;
+    private bool isDashing = false;
     private bool hasDashed;
     private bool DashDirection; //True = Left, False = Right
 
@@ -242,12 +243,14 @@ public class PlayerController : MonoBehaviour
             else DashDirection = false;
             currentDashTime = 0.0f;
             hasDashed = true;
+            isDashing = true;
         }
     }
 
     private bool CanDash()
     {
-        return (!IsGrounded() && !hasDashed);
+        // return (!IsGrounded() && !hasDashed);
+        return (!hasDashed);
     }
 
     private void UpdateDash()
@@ -257,11 +260,24 @@ public class PlayerController : MonoBehaviour
             currentDashTime += dashStoppingSpeed;
             if (DashDirection) MainGame.transform.Translate(Vector3.left * dashSpeed * Time.deltaTime);
             else MainGame.transform.Translate(Vector3.right * dashSpeed * Time.deltaTime);
+
         }
+        else
+        isDashing = false;
     }
 
     private bool IsGrounded()
     {// Will be set to true if the FeetPosition overlaps with ground
         return Physics2D.OverlapCircle(this.FeetPosition.position, this.CheckRadius, this.WhatIsGround);
+    }
+
+    void OnTriggerEnter2D (Collider2D Collision)
+    {
+        if (Collision.transform.gameObject.tag == "DashableObstacle" && isDashing == true)
+        {
+            Collision.transform.Translate(10f, 0, 0);
+        }else {
+            this.GetComponent<EndGameTrigger>().GameOver();
+        }
     }
 }

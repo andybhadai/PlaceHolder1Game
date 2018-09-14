@@ -440,6 +440,11 @@ Prefab:
       propertyPath: thingToFollow
       value: 
       objectReference: {fileID: 2129874237}
+    - target: {fileID: 61690271956284692, guid: a1d1fe6c171f94b4782f0957defa6c59,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1d1fe6c171f94b4782f0957defa6c59, type: 2}
   m_IsPrefabAsset: 0
@@ -673,7 +678,7 @@ Prefab:
         type: 2}
       propertyPath: MainGame
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2020954934}
     - target: {fileID: 50117133167936648, guid: 8790326cdb0790247b4e6f1f774f94e9,
         type: 2}
       propertyPath: m_Constraints
@@ -761,6 +766,16 @@ Prefab:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: a5a2de4aac4fa9d4f8cbe860ec1001cd, type: 2}
+    - target: {fileID: 61481776092357038, guid: 8790326cdb0790247b4e6f1f774f94e9,
+        type: 2}
+      propertyPath: m_UsedByEffector
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 61481776092357038, guid: 8790326cdb0790247b4e6f1f774f94e9,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8790326cdb0790247b4e6f1f774f94e9, type: 2}
   m_IsPrefabAsset: 0
