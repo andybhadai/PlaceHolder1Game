@@ -360,6 +360,10 @@ Prefab:
     - target: {fileID: 212331307730686178, guid: a1d1fe6c171f94b4782f0957defa6c59,
         type: 2}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1033116005422780, guid: a1d1fe6c171f94b4782f0957defa6c59, type: 2}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
