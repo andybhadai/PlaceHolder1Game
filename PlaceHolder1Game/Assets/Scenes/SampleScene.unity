@@ -205,10 +205,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a088b566ff906024f9b773f2c691c391, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WoodenFence: {fileID: 1680545304176020, guid: e7f0b1b8c557faa448c6154a44d15e76,
-    type: 2}
+  obstacle: {fileID: 1680545304176020, guid: e7f0b1b8c557faa448c6154a44d15e76, type: 2}
   xPos: -9
   yPos: -1.25
+  airObstacle: {fileID: 1953894009772540, guid: 099001b1d091b6844b62dcb8624ea1b1,
+    type: 2}
+  xPosAir: -30
+  yPosAir: 3
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
