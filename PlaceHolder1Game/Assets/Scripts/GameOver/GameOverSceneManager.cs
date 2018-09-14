@@ -13,7 +13,7 @@ public class GameOverSceneManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         int score = (int) PlayerPrefs.GetFloat("score", 0f);
-        this.GameOverText.text = $"Game over! Your score was {score * -1}";
+        this.GameOverText.text = $"{score * -1}";
 	}
 	
 	// Update is called once per frame
