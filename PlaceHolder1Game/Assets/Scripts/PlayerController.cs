@@ -152,7 +152,7 @@ public class PlayerController : MonoBehaviour
 
     private void CalculateScore()
     {
-        this.TotalDistance = (int)GetComponent<Rigidbody2D>().transform.position.x;
+        this.TotalDistance = (int)MainGame.transform.position.x;
         this.LoggedInText.text = $" YOU HAVE RUN {this.TotalDistance * -1}";
     }
 

@@ -12,13 +12,14 @@ public class EndGameTrigger : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 		if (transform.position.x - mainGame.transform.position.x > distanceToDeath) {
+			SaveScoreLocally();
 			SceneManager.LoadScene("GameOver");
 		}
 	}
 
     private void SaveScoreLocally()
     {
-        PlayerPrefs.SetFloat("score", this.transform.position.x);
+        PlayerPrefs.SetFloat("score", mainGame.transform.position.x);
         PlayerPrefs.Save();
     }
 }
