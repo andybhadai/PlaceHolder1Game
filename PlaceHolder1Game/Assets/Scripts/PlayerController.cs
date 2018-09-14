@@ -19,7 +19,6 @@ public class PlayerController : MonoBehaviour
     private int TotalDistance = 0;
     public float TimeOut = 2000;
     private bool Movable = true;
-    public Text LoggedInText;
     private Vector3 touchPress;
     private Vector3 touchRelease;
     private float dragDistance;
@@ -30,6 +29,7 @@ public class PlayerController : MonoBehaviour
     public float dashSpeed = 1.0f;
     public float dashStoppingSpeed = 0.1f;
     private float currentDashTime;
+    private bool isDashing = false;
     private bool hasDashed;
     private bool DashDirection; //True = Left, False = Right
 
@@ -39,22 +39,6 @@ public class PlayerController : MonoBehaviour
     {
         GooglePlayGames.PlayGamesPlatform.Activate();
         //this.Login();
-    }
-
-    private void OnConnectionResponse(bool authenticated)
-    {
-        this.LoggedInText.text = "Getting response!";
-
-        if (authenticated)
-        {
-            this.LoggedInText.text = "You are logged in!";
-        }
-        else
-        {
-            this.LoggedInText.text = "You are not logged in!";
-        }
-
-        dragDistance = Screen.height * dragDistancePercent / 100; //dragDistance is 15% height of the screen
     }
 
     void Update()
@@ -153,7 +137,6 @@ public class PlayerController : MonoBehaviour
     private void CalculateScore()
     {
         this.TotalDistance = (int)MainGame.transform.position.x;
-        this.LoggedInText.text = $" YOU HAVE RUN {this.TotalDistance * -1}";
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -192,33 +175,26 @@ public class PlayerController : MonoBehaviour
 
     private void Login()
     {
-        this.LoggedInText.text = "You are going to log in!";
-
         if (Social.localUser.authenticated)
         {
-            this.LoggedInText.text = "You are logged in!";
+            // moet nog wat komen hier
         }
         else
         {
-            this.LoggedInText.text = "Logging in...";
-
             // Log in to Google Games
             Social.localUser.Authenticate(success =>
             {
-                this.LoggedInText.text = "Callback";
                 //this.OnConnectionResponse(success);
 
                 if (success)
                 {
-                    this.LoggedInText.text = "You are logged in!";
+
                 }
                 else
                 {
-                    this.LoggedInText.text = "Something went wrong";
+                    
                 }
             });
-
-            this.LoggedInText.text = "Logging in did not work";
         }
     }
 
@@ -242,12 +218,14 @@ public class PlayerController : MonoBehaviour
             else DashDirection = false;
             currentDashTime = 0.0f;
             hasDashed = true;
+            isDashing = true;
         }
     }
 
     private bool CanDash()
     {
-        return (!IsGrounded() && !hasDashed);
+        // return (!IsGrounded() && !hasDashed);
+        return (!hasDashed);
     }
 
     private void UpdateDash()
@@ -257,11 +235,24 @@ public class PlayerController : MonoBehaviour
             currentDashTime += dashStoppingSpeed;
             if (DashDirection) MainGame.transform.Translate(Vector3.left * dashSpeed * Time.deltaTime);
             else MainGame.transform.Translate(Vector3.right * dashSpeed * Time.deltaTime);
+
         }
+        else
+        isDashing = false;
     }
 
     private bool IsGrounded()
     {// Will be set to true if the FeetPosition overlaps with ground
         return Physics2D.OverlapCircle(this.FeetPosition.position, this.CheckRadius, this.WhatIsGround);
+    }
+
+    void OnTriggerEnter2D (Collider2D Collision)
+    {
+        if (Collision.transform.gameObject.tag == "DashableObstacle" && isDashing == true)
+        {
+            Collision.transform.Translate(10f, 0, 0);
+        }else {
+            this.GetComponent<EndGameTrigger>().GameOver();
+        }
     }
 }
