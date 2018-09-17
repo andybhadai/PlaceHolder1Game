@@ -366,7 +366,8 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114080015937149440, guid: a1d1fe6c171f94b4782f0957defa6c59, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: a1d1fe6c171f94b4782f0957defa6c59, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &732353452
@@ -541,6 +542,11 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b37942f8e5449ec469a21a06d450130c, type: 2}
   m_IsPrefabAsset: 0
+--- !u!4 &1488892623 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4256926834689688, guid: 8790326cdb0790247b4e6f1f774f94e9,
+    type: 2}
+  m_PrefabInternal: {fileID: 1511014271}
 --- !u!1001 &1511014271
 Prefab:
   m_ObjectHideFlags: 0
@@ -700,9 +706,27 @@ Prefab:
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114061142472597078, guid: 8790326cdb0790247b4e6f1f774f94e9, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 8790326cdb0790247b4e6f1f774f94e9, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1585656588 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1033116005422780, guid: a1d1fe6c171f94b4782f0957defa6c59,
+    type: 2}
+  m_PrefabInternal: {fileID: 610639504}
+--- !u!114 &1585656589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1585656588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5827bd05138cadb4cafe8ea1a188ffe6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thingToFollow: {fileID: 2129874237}
 --- !u!1 &2020954934
 GameObject:
   m_ObjectHideFlags: 0
@@ -749,6 +773,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   speedOverTime: 0.005
+--- !u!1 &2080749815 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1304428771600142, guid: 8790326cdb0790247b4e6f1f774f94e9,
+    type: 2}
+  m_PrefabInternal: {fileID: 1511014271}
+--- !u!114 &2080749818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2080749815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52f2528d38da3a64388eebdd9e87d3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RunSpeed: 0
+  JumpSpeed: 0
+  JumpForce: 10
+  HitBack: 4
+  FeetPosition: {fileID: 1488892623}
+  CheckRadius: 0.5
+  WhatIsGround:
+    serializedVersion: 2
+    m_Bits: 256
+  TimeOut: 2000
+  dragDistancePercent: 15
+  maxDashTime: 1
+  dashSpeed: 10
+  dashStoppingSpeed: 0.1
+  MainGame: {fileID: 2020954934}
 --- !u!4 &2129874237 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4559723759747202, guid: 8790326cdb0790247b4e6f1f774f94e9,
