@@ -93,6 +93,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minimumPosition: 25
   maximumPosition: 35
+  breakableChance: 0
   sprites:
   - {fileID: 21300010, guid: c8b0d220395d655469e9616c61c588d5, type: 3}
   - {fileID: 21300014, guid: c8b0d220395d655469e9616c61c588d5, type: 3}

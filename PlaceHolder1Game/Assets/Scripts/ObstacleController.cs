@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class ObstacleController : MonoBehaviour {
 
-    public GameObject obstacle;        
+    public GameObject obstacle;
+    public GameObject[] breakableObstacles;
     public float xPos;
     public float yPos;
     public GameObject airObstacle;
@@ -15,6 +16,7 @@ public class ObstacleController : MonoBehaviour {
     {
         SpawnObstacle();
         SpawnAirObstacle();
+        SpawnBreakableObstacle();
     }
 
     public void SpawnObstacle()
@@ -27,5 +29,14 @@ public class ObstacleController : MonoBehaviour {
     {
         airObstacle.transform.position = new Vector3(xPosAir, yPosAir, 0);
         Instantiate(airObstacle);
+    }
+
+    public void SpawnBreakableObstacle()
+    {
+        foreach(GameObject breakableObstacle in breakableObstacles)
+        {
+            breakableObstacle.transform.position = new Vector3(xPos, yPos, 0);
+            Instantiate(breakableObstacle);
+        }
     }
 }

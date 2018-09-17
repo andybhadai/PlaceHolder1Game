@@ -211,6 +211,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstacle: {fileID: 1680545304176020, guid: e7f0b1b8c557faa448c6154a44d15e76, type: 2}
+  breakableObstacles:
+  - {fileID: 1178247709571358, guid: c9d6c4e31060feb4cbad8c6b903646e6, type: 2}
   xPos: -9
   yPos: -1.25
   airObstacle: {fileID: 1953894009772540, guid: 099001b1d091b6844b62dcb8624ea1b1,
