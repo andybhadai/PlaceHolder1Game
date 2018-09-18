@@ -37,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1680545304176020}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9, y: -1.25, z: 0}
+  m_LocalPosition: {x: -57.48404, y: 0, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -97,7 +97,10 @@ MonoBehaviour:
   - {fileID: 21300010, guid: c8b0d220395d655469e9616c61c588d5, type: 3}
   - {fileID: 21300014, guid: c8b0d220395d655469e9616c61c588d5, type: 3}
   - {fileID: 21300016, guid: c8b0d220395d655469e9616c61c588d5, type: 3}
-  - {fileID: 21300004, guid: c8b0d220395d655469e9616c61c588d5, type: 3}
+  isBreakable: 0
+  isAirObstacle: 0
+  objects: {fileID: 0}
+  mainGame: {fileID: 0}
 --- !u!212 &212547583494364052
 SpriteRenderer:
   m_ObjectHideFlags: 1
