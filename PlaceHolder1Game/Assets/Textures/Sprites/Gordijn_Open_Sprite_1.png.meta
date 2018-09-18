@@ -1,42 +1,33 @@
 fileFormatVersion: 2
-guid: af17d745b8ce92148818ee17b52928d9
+guid: 0d1f551ee411d334f8bd50dacd94e577
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Start_Raam_Sprite_0
-    21300002: Start_Raam_Sprite_1
-    21300004: Start_Raam_Sprite_2
-    21300006: Start_Raam_Sprite_3
-    21300008: Start_Raam_Sprite_4
-    21300010: Start_Raam_Sprite_5
-    21300012: Start_Raam_Sprite_6
-    21300014: Start_Raam_Sprite_7
-    21300016: Start_Raam_Sprite_8
-    21300018: Start_Raam_Sprite_9
-    21300020: Start_Raam_Sprite_10
-    21300022: Start_Raam_Sprite_11
-    21300024: Start_Raam_Sprite_12
-    21300026: Start_Raam_Sprite_13
-    21300028: Start_Raam_Sprite_14
-    21300030: Start_Raam_Sprite_15
-    21300032: Start_Raam_Sprite_16
-    21300034: Start_Raam_Sprite_17
-    21300036: Start_Raam_Sprite_18
-    21300038: Start_Raam_Sprite_19
-    21300040: Start_Raam_Sprite_20
-    21300042: Start_Raam_Sprite_21
-    21300044: Start_Raam_Sprite_22
-    21300046: Start_Raam_Sprite_23
-    21300048: Start_Raam_Sprite_24
-    21300050: Start_Raam_Sprite_25
-    21300052: Start_Raam_Sprite_26
-    21300054: Start_Raam_Sprite_27
-    21300056: Start_Raam_Sprite_28
-    21300058: Start_Raam_Sprite_29
-    21300060: Start_Raam_Sprite_30
-    21300062: Start_Raam_Sprite_31
-    21300064: Start_Raam_Sprite_32
-    21300066: Start_Raam_Sprite_33
-    21300068: Start_Raam_Sprite_34
+    21300000: Gordijn_Open_Sprite_1_0
+    21300002: Gordijn_Open_Sprite_1_1
+    21300004: Gordijn_Open_Sprite_1_2
+    21300006: Gordijn_Open_Sprite_1_3
+    21300008: Gordijn_Open_Sprite_1_4
+    21300010: Gordijn_Open_Sprite_1_5
+    21300012: Gordijn_Open_Sprite_1_6
+    21300014: Gordijn_Open_Sprite_1_7
+    21300016: Gordijn_Open_Sprite_1_8
+    21300018: Gordijn_Open_Sprite_1_9
+    21300020: Gordijn_Open_Sprite_1_10
+    21300022: Gordijn_Open_Sprite_1_11
+    21300024: Gordijn_Open_Sprite_1_12
+    21300026: Gordijn_Open_Sprite_1_13
+    21300028: Gordijn_Open_Sprite_1_14
+    21300030: Gordijn_Open_Sprite_1_15
+    21300032: Gordijn_Open_Sprite_1_16
+    21300034: Gordijn_Open_Sprite_1_17
+    21300036: Gordijn_Open_Sprite_1_18
+    21300038: Gordijn_Open_Sprite_1_19
+    21300040: Gordijn_Open_Sprite_1_20
+    21300042: Gordijn_Open_Sprite_1_21
+    21300044: Gordijn_Open_Sprite_1_22
+    21300046: Gordijn_Open_Sprite_1_23
+    21300048: Gordijn_Open_Sprite_1_24
+    21300050: Gordijn_Open_Sprite_1_25
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -130,13 +121,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Start_Raam_Sprite_0
+      name: Gordijn_Open_Sprite_1_0
       rect:
         serializedVersion: 2
-        x: 38
-        y: 4541
-        width: 584
-        height: 446
+        x: 0
+        y: 1458
+        width: 364
+        height: 243
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -144,19 +135,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d5521d87bdcd5a3489b0d34f1dc512c5
+      spriteID: b31c359f0a6ceb64ca8e24dc69608889
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start_Raam_Sprite_1
+      name: Gordijn_Open_Sprite_1_1
       rect:
         serializedVersion: 2
-        x: 711
-        y: 4541
-        width: 584
-        height: 446
+        x: 364
+        y: 1458
+        width: 364
+        height: 243
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,19 +155,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 74446f1a1ba93404ebe805a323e0a442
+      spriteID: 508fee448442eb34585c9203fb0ab450
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start_Raam_Sprite_2
+      name: Gordijn_Open_Sprite_1_2
       rect:
         serializedVersion: 2
-        x: 1413
-        y: 4541
-        width: 584
-        height: 446
+        x: 728
+        y: 1458
+        width: 364
+        height: 243
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,19 +175,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bed339373f3fb2b4b810de51e71dd556
+      spriteID: 37e3fbfc6d86ede4ca376166ee03aa73
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start_Raam_Sprite_3
+      name: Gordijn_Open_Sprite_1_3
       rect:
         serializedVersion: 2
-        x: 2115
-        y: 4541
-        width: 584
-        height: 446
+        x: 1092
+        y: 1458
+        width: 364
+        height: 243
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -204,19 +195,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cfa51b93f63b1e54aac9bc53fbfec97a
+      spriteID: 48dd2ee26b6b64c45a13225f9e1c67b8
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start_Raam_Sprite_4
+      name: Gordijn_Open_Sprite_1_4
       rect:
         serializedVersion: 2
-        x: 1727
-        y: 4430
-        width: 25
-        height: 26
+        x: 0
+        y: 1215
+        width: 364
+        height: 243
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -224,19 +215,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9aa92fb904e935f49bebcc6c552b4b9a
+      spriteID: fa819979b7ab89f4fac17a9c478d863e
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start_Raam_Sprite_5
+      name: Gordijn_Open_Sprite_1_5
       rect:
         serializedVersion: 2
-        x: 2415
-        y: 4430
-        width: 32
-        height: 59
+        x: 364
+        y: 1215
+        width: 364
+        height: 243
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -244,19 +235,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9566e8b0b659f43408d8bd5e1dbda816
+      spriteID: 71b25b25338b9f74fab9e56ce15aa6e8
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start_Raam_Sprite_6
+      name: Gordijn_Open_Sprite_1_6
       rect:
         serializedVersion: 2
-        x: 2464
-        y: 4431
-        width: 9
-        height: 6
+        x: 728
+        y: 1215
+        width: 364
+        height: 243
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -264,19 +255,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 92cff1f335c6d4a48b4129cb8eb575a3
+      spriteID: f9dde05528b73374c9886c63c5cea978
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start_Raam_Sprite_7
+      name: Gordijn_Open_Sprite_1_7
       rect:
         serializedVersion: 2
-        x: 38
-        y: 3907
-        width: 584
-        height: 449
+        x: 1092
+        y: 1215
+        width: 364
+        height: 243
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -284,19 +275,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ebbf65b6763b6b4428b48241567a51a7
+      spriteID: 3e6d969ab73b8c247a6fdcaa39bbcd84
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start_Raam_Sprite_8
+      name: Gordijn_Open_Sprite_1_8
       rect:
         serializedVersion: 2
-        x: 711
-        y: 3799
-        width: 584
-        height: 557
+        x: 0
+        y: 972
+        width: 364
+        height: 243
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -304,19 +295,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd3f32533320939469194d364ed7339b
+      spriteID: af812907ab41d1143b2617825c0feed6
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start_Raam_Sprite_9
+      name: Gordijn_Open_Sprite_1_9
       rect:
         serializedVersion: 2
-        x: 1413
-        y: 3799
-        width: 584
-        height: 557
+        x: 364
+        y: 972
+        width: 364
+        height: 243
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -324,19 +315,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7e4931856e904044d9babaf1c8a6c7cd
+      spriteID: 71043f9ef40c7644d87d8c8203c339df
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start_Raam_Sprite_10
+      name: Gordijn_Open_Sprite_1_10
       rect:
         serializedVersion: 2
-        x: 2115
-        y: 3799
-        width: 584
-        height: 557
+        x: 728
+        y: 972
+        width: 364
+        height: 243
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -344,19 +335,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: af400323e28f03642bced5f703a90453
+      spriteID: 9e9ca72490096ea4ebc83af1ff5b7617
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start_Raam_Sprite_11
+      name: Gordijn_Open_Sprite_1_11
       rect:
         serializedVersion: 2
-        x: 318
-        y: 3799
-        width: 128
-        height: 103
+        x: 1092
+        y: 972
+        width: 364
+        height: 243
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -364,19 +355,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 585effaa45ddf674ca1761cede42f3a4
+      spriteID: aa8b30c1fbac1164bafbb15a049df1ac
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start_Raam_Sprite_12
+      name: Gordijn_Open_Sprite_1_12
       rect:
         serializedVersion: 2
-        x: 38
-        y: 3058
-        width: 584
-        height: 557
+        x: 0
+        y: 729
+        width: 364
+        height: 243
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -384,19 +375,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 67fe7c1ad5f29c1409b934123855f30c
+      spriteID: 86894d8c081b921408d4ef32ba8bf117
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start_Raam_Sprite_13
+      name: Gordijn_Open_Sprite_1_13
       rect:
         serializedVersion: 2
-        x: 711
-        y: 3058
-        width: 584
-        height: 557
+        x: 364
+        y: 729
+        width: 364
+        height: 243
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -404,19 +395,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f3bfaab065ff0464abacc1628f6b98be
+      spriteID: d29b4254d4927514a9a8731a293e701f
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start_Raam_Sprite_14
+      name: Gordijn_Open_Sprite_1_14
       rect:
         serializedVersion: 2
-        x: 1413
-        y: 3058
-        width: 584
-        height: 557
+        x: 728
+        y: 729
+        width: 364
+        height: 243
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -424,19 +415,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3900af0a33a092d4eb8dcd854cce44ab
+      spriteID: 45092cf72e78b464fb52c47f1b999e7b
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start_Raam_Sprite_15
+      name: Gordijn_Open_Sprite_1_15
       rect:
         serializedVersion: 2
-        x: 2115
-        y: 3058
-        width: 584
-        height: 557
+        x: 1092
+        y: 729
+        width: 364
+        height: 243
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -444,19 +435,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cd933be3b5612184483aa2983e7eb5cd
+      spriteID: 84b6bc0a59dd34447a5b5f95ab50a50f
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start_Raam_Sprite_16
+      name: Gordijn_Open_Sprite_1_16
       rect:
         serializedVersion: 2
-        x: 38
-        y: 2316
-        width: 587
-        height: 558
+        x: 0
+        y: 486
+        width: 364
+        height: 243
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -464,19 +455,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eff85ca12117b4c4da111a8963571f5a
+      spriteID: 816cc4ab2ac7951449a2ec66641e614c
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start_Raam_Sprite_17
+      name: Gordijn_Open_Sprite_1_17
       rect:
         serializedVersion: 2
-        x: 708
-        y: 2316
-        width: 587
-        height: 558
+        x: 364
+        y: 486
+        width: 364
+        height: 243
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -484,19 +475,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0763c045b34108d498121ae43edcaef9
+      spriteID: 10bfd1cbdae73e0498556aa92d3c1caf
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start_Raam_Sprite_18
+      name: Gordijn_Open_Sprite_1_18
       rect:
         serializedVersion: 2
-        x: 1411
-        y: 2316
-        width: 586
-        height: 558
+        x: 728
+        y: 486
+        width: 364
+        height: 243
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -504,19 +495,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 65fc2a7527962304a875e1aaf564f328
+      spriteID: 3c28890a7813d884bb95fd4e8c4c51b3
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start_Raam_Sprite_19
+      name: Gordijn_Open_Sprite_1_19
       rect:
         serializedVersion: 2
-        x: 2113
-        y: 2319
-        width: 587
-        height: 557
+        x: 1092
+        y: 486
+        width: 364
+        height: 243
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -524,19 +515,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e2320399e9950fe4f90ee44d4ce74067
+      spriteID: 08ae268253d3da5448cd08475dd9b43f
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start_Raam_Sprite_20
+      name: Gordijn_Open_Sprite_1_20
       rect:
         serializedVersion: 2
-        x: 38
-        y: 1577
-        width: 587
-        height: 558
+        x: 0
+        y: 243
+        width: 364
+        height: 243
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -544,19 +535,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 33085dfe7f0badf4589aff3f414f7c63
+      spriteID: cf75d896a9243dd47ad6ed4deb88a604
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start_Raam_Sprite_21
+      name: Gordijn_Open_Sprite_1_21
       rect:
         serializedVersion: 2
-        x: 708
-        y: 1577
-        width: 587
-        height: 558
+        x: 364
+        y: 243
+        width: 364
+        height: 243
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -564,19 +555,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 96dcd7883651f524596697167c262957
+      spriteID: 003ad26e7f443fb4cb71918d356d72ef
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start_Raam_Sprite_22
+      name: Gordijn_Open_Sprite_1_22
       rect:
         serializedVersion: 2
-        x: 1411
-        y: 1577
-        width: 585
-        height: 558
+        x: 728
+        y: 243
+        width: 364
+        height: 243
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -584,19 +575,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 000f6bbd8981a96458058d8db8b09309
+      spriteID: 9e1f9df3855f9cd4e80e70f2461b0b4e
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start_Raam_Sprite_23
+      name: Gordijn_Open_Sprite_1_23
       rect:
         serializedVersion: 2
-        x: 2115
-        y: 1580
-        width: 584
-        height: 557
+        x: 1092
+        y: 243
+        width: 364
+        height: 243
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -604,19 +595,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0f01d902e4bcbc247a414fd6ece680b9
+      spriteID: 105626b31eb01424499ba07ea3463fba
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start_Raam_Sprite_24
+      name: Gordijn_Open_Sprite_1_24
       rect:
         serializedVersion: 2
-        x: 50
-        y: 1008
-        width: 582
-        height: 385
+        x: 0
+        y: 0
+        width: 364
+        height: 243
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -624,19 +615,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f7c6d67a0a1ae54499a013b9402305f1
+      spriteID: 360ea0b265cc7124eac6094b89d0ab50
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Start_Raam_Sprite_25
+      name: Gordijn_Open_Sprite_1_25
       rect:
         serializedVersion: 2
-        x: 716
-        y: 1126
-        width: 579
-        height: 267
+        x: 364
+        y: 0
+        width: 364
+        height: 243
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -644,187 +635,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 40d181b11eacef0459af448aa177123d
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Start_Raam_Sprite_26
-      rect:
-        serializedVersion: 2
-        x: 1413
-        y: 1241
-        width: 579
-        height: 152
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ae234c05015095240ab6fb529d85fe25
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Start_Raam_Sprite_27
-      rect:
-        serializedVersion: 2
-        x: 2120
-        y: 1327
-        width: 580
-        height: 69
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d7d299aeac477f84da4a24f2b8ea2f72
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Start_Raam_Sprite_28
-      rect:
-        serializedVersion: 2
-        x: 443
-        y: 836
-        width: 138
-        height: 130
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 81c67b56f0dc94b4b817170da3a55b27
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Start_Raam_Sprite_29
-      rect:
-        serializedVersion: 2
-        x: 1111
-        y: 836
-        width: 140
-        height: 135
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2222102b09398b0469bc1bbcd62979f4
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Start_Raam_Sprite_30
-      rect:
-        serializedVersion: 2
-        x: 1801
-        y: 836
-        width: 140
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1f5670f3d836d2b40b66ecbd28176374
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Start_Raam_Sprite_31
-      rect:
-        serializedVersion: 2
-        x: 2522
-        y: 838
-        width: 126
-        height: 108
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7729d0d501f3ae14abc848d7814fe65d
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Start_Raam_Sprite_32
-      rect:
-        serializedVersion: 2
-        x: 343
-        y: 632
-        width: 34
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 54d67e483cc55a64caf0775a7f5cf727
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Start_Raam_Sprite_33
-      rect:
-        serializedVersion: 2
-        x: 490
-        y: 96
-        width: 103
-        height: 75
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6092982c76897324fbf76e1d81c0df0f
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Start_Raam_Sprite_34
-      rect:
-        serializedVersion: 2
-        x: 1268
-        y: 97
-        width: 27
-        height: 34
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e810e3f1d263fdf4a9ed5d6ab02e33a3
+      spriteID: 67b22e98a9ad00e4e9c8c1324bd7b8d7
       vertices: []
       indices: 
       edges: []
@@ -832,7 +643,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: b066c558facd99b4ca73a4d932f883b6
+    spriteID: a09d22d6682ee7d4cae37e586e55f265
     vertices: []
     indices: 
     edges: []
