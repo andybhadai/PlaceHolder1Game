@@ -120,7 +120,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 0.7
+  bundleVersion: 0.8
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -156,7 +156,7 @@ PlayerSettings:
     Android: com.teamrotterdam.placeholder1game
     Standalone: com.Company.ProductName
   buildNumber: {}
-  AndroidBundleVersionCode: 7
+  AndroidBundleVersionCode: 8
   AndroidMinSdkVersion: 16
   AndroidTargetSdkVersion: 26
   AndroidPreferredInstallLocation: 1
@@ -245,7 +245,7 @@ PlayerSettings:
   AndroidTargetArchitectures: 1
   AndroidSplashScreenScale: 2
   androidSplashScreen: {fileID: 2800000, guid: 7cb7abda31cabbb4d82c314f37700d68, type: 3}
-  AndroidKeystoreName: C:/Users/MarkvanderHeiden/Desktop/bythehandkeystore.keystore
+  AndroidKeystoreName: C:/Users/abhad/Desktop/bythehandkeystore.keystore
   AndroidKeyaliasName: bythehand
   AndroidBuildApkPerCpuArchitecture: 0
   AndroidTVCompatibility: 1
