@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        GooglePlayGames.PlayGamesPlatform.Activate();
+        //GooglePlayGames.PlayGamesPlatform.Activate();
         //this.Login();
     }
 
