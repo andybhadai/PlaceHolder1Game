@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4850536493375874}
   - component: {fileID: 212994523593523184}
   - component: {fileID: 61226446534362770}
-  - component: {fileID: 114174332921138692}
   - component: {fileID: 114406614422846600}
   m_Layer: 0
   m_Name: BreakableObstacle
@@ -68,25 +67,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.8558497, y: 7}
   m_EdgeRadius: 0
---- !u!114 &114174332921138692
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1645513350781984}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e25f2619d1116f941b54d9ad786867fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minimumPosition: 25
-  maximumPosition: 35
-  sprites:
-  - {fileID: 21300004, guid: c8b0d220395d655469e9616c61c588d5, type: 3}
-  isBreakable: 1
-  isAirObstacle: 0
-  objects: {fileID: 0}
-  mainGame: {fileID: 0}
 --- !u!114 &114406614422846600
 MonoBehaviour:
   m_ObjectHideFlags: 1

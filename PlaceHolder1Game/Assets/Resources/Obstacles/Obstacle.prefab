@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4636439470386784}
   - component: {fileID: 212547583494364052}
   - component: {fileID: 61120875052393540}
-  - component: {fileID: 114730286305999122}
   - component: {fileID: 114534139090266068}
   m_Layer: 0
   m_Name: Obstacle
@@ -80,27 +79,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
---- !u!114 &114730286305999122
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1680545304176020}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e25f2619d1116f941b54d9ad786867fc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minimumPosition: 25
-  maximumPosition: 35
-  sprites:
-  - {fileID: 21300010, guid: c8b0d220395d655469e9616c61c588d5, type: 3}
-  - {fileID: 21300014, guid: c8b0d220395d655469e9616c61c588d5, type: 3}
-  - {fileID: 21300016, guid: c8b0d220395d655469e9616c61c588d5, type: 3}
-  isBreakable: 0
-  isAirObstacle: 0
-  objects: {fileID: 0}
-  mainGame: {fileID: 0}
 --- !u!212 &212547583494364052
 SpriteRenderer:
   m_ObjectHideFlags: 1
