@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,7 +8,7 @@ public class PlayerController : MonoBehaviour
 
     public const string leaderboard_highscore = "CgkI6-femrAJEAIQAQ";
 
-    public float RunSpeed = 2f;
+    public float RunSpeed = 4f;
     public float JumpSpeed = 2f;
     public float JumpForce = 1f;
     public float HitBack = 4f;
@@ -24,6 +25,8 @@ public class PlayerController : MonoBehaviour
     private float dragDistance;
     public float dragDistancePercent;
     private bool newSwipe = false;
+    public GameObject ScoreBoard;
+    public TextMeshProUGUI Score;
 
     public float maxDashTime = 1.0f;
     public float dashSpeed = 1.0f;
@@ -39,6 +42,7 @@ public class PlayerController : MonoBehaviour
     {
         //GooglePlayGames.PlayGamesPlatform.Activate();
         //this.Login();
+        //ActivateScoreBoard();
     }
 
     void Update()
@@ -48,6 +52,11 @@ public class PlayerController : MonoBehaviour
         }
 
         this.CalculateScore();
+
+        if(TotalDistance % 100 == 0)
+        {
+            ShowAndResetScoreBoard();
+        }
 
         CheckSwipe();
     }
@@ -137,6 +146,13 @@ public class PlayerController : MonoBehaviour
     private void CalculateScore()
     {
         this.TotalDistance = (int)MainGame.transform.position.x;
+    }
+
+    private void ShowAndResetScoreBoard()
+    {
+        Score.text = $"{TotalDistance * - 1} KM";
+        ScoreBoard.transform.localPosition = new Vector3(-800, -119);
+        ScoreBoard.SetActive(true);
     }
 
     void OnCollisionEnter2D(Collision2D collision)
