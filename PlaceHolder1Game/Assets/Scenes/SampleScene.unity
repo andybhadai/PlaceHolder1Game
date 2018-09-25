@@ -1296,7 +1296,7 @@ MonoBehaviour:
     m_Bits: 256
   TimeOut: 2000
   dragDistancePercent: 15
-  maxDashTime: 1
+  maxDashTime: 1.5
   dashSpeed: 10
   dashStoppingSpeed: 0.1
   MainGame: {fileID: 2020954934}
