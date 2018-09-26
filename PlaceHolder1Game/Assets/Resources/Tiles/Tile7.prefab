@@ -19,6 +19,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 224796153518466218}
+  - component: {fileID: 114471249047314178}
+  - component: {fileID: 23761219658365388}
   m_Layer: 0
   m_Name: Tile7
   m_TagString: Untagged
@@ -36,7 +38,6 @@ GameObject:
   - component: {fileID: 4721083330002976}
   - component: {fileID: 212434074323881362}
   - component: {fileID: 61440772999205810}
-  - component: {fileID: 114925200972819352}
   m_Layer: 0
   m_Name: Obstacle (1)
   m_TagString: Obstacle
@@ -54,7 +55,6 @@ GameObject:
   - component: {fileID: 4054634332253776}
   - component: {fileID: 212594388145075174}
   - component: {fileID: 61780710914703084}
-  - component: {fileID: 114653017558060126}
   m_Layer: 0
   m_Name: Obstacle
   m_TagString: Obstacle
@@ -88,6 +88,41 @@ Transform:
   m_Father: {fileID: 224796153518466218}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &23761219658365388
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1128393556855214}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!61 &61440772999205810
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -138,30 +173,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.8558497, y: 7}
   m_EdgeRadius: 0
---- !u!114 &114653017558060126
+--- !u!114 &114471249047314178
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1923414484346114}
+  m_GameObject: {fileID: 1128393556855214}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04abfd0c8477ec54da69c80f122f9640, type: 3}
+  m_Script: {fileID: 11500000, guid: 1c3a10444dc801846959c34555a59604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
---- !u!114 &114925200972819352
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1576763356112984}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04abfd0c8477ec54da69c80f122f9640, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 1
+  offScreenDistance: 10
 --- !u!212 &212434074323881362
 SpriteRenderer:
   m_ObjectHideFlags: 1
