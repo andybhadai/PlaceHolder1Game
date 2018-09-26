@@ -53,7 +53,7 @@ public class PlayerController : MonoBehaviour
         PlayGamesPlatform.DebugLogEnabled = true;
         PlayGamesPlatform.Activate();
 
-        this.Login();
+        //this.Login();
 
         animator = GetComponent<Animator>();
 

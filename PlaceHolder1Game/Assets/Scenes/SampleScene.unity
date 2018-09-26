@@ -169,7 +169,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4451652117177100, guid: 68fa053b12d6b7e4683f94a17d77c3ca, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68fa053b12d6b7e4683f94a17d77c3ca, type: 2}
@@ -264,7 +264,7 @@ RectTransform:
   - {fileID: 1557058531}
   - {fileID: 786270580}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -648,8 +648,10 @@ MonoBehaviour:
   - {fileID: 1884903439003404, guid: d3a16e9d038f53f4b9e6870ca59430c0, type: 2}
   - {fileID: 1128393556855214, guid: 229ec789d86766f4b966025e22e5456f, type: 2}
   - {fileID: 1574010250731824, guid: 32e4ffc80ae79194cb13c08363dbad34, type: 2}
+  - {fileID: 1063991857971358, guid: 8212abd45038ae24f8b8a3b939a88c82, type: 2}
   mainGame: {fileID: 2020954934}
-  chance: 40
+  chance: 90
+  startTilesAmount: 6
 --- !u!4 &619986273
 Transform:
   m_ObjectHideFlags: 0
@@ -1742,7 +1744,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   TimeOut: 2000
-  dragDistancePercent: 15
+  dragDistancePercent: 40
   ScoreBoard: {fileID: 1557058530}
   Score: {fileID: 1666918385}
   LoggedIn: {fileID: 786270578}

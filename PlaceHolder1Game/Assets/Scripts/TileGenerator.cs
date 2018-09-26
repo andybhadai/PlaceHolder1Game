@@ -9,41 +9,52 @@ public class TileGenerator : MonoBehaviour {
     public GameObject mainGame;
     public int chance;
     private int generatedTiles;
+    public int startTilesAmount;
+
+
+    void Start() 
+    {
+        for(int i = 0; i < startTilesAmount; i++)
+        {
+            NewTile();
+        }
+    }
+
+    void Update()
+    {
+
+    }
 
     private int RandomNumber()
     {
         return Random.Range(1, GameObjects.Length);
     }
 
-    void Update()
+    public void RemoveTile() 
     {
-        if(iterations == 50)
+        generatedTiles--;
+        NewTile();
+    }
+
+    public void NewTile()
+    {
+        generatedTiles++;
+
+        int random = Random.Range(0, 100);
+
+        if(random < chance)
         {
-            generatedTiles++;
-
-            int random = Random.Range(0, 100);
-
-            if(random < chance)
-            {
-                Spawn(RandomNumber());
-            }
-            else
-            {
-                Spawn(0);
-            }
-
-            iterations = 0;
-            
+            Spawn(RandomNumber());
         }
         else
         {
-            iterations++;
+            Spawn(0);
         }
     }
 
     private void Spawn(int obstacle)
     {
-        int x = -10 * generatedTiles;
+        int x = -15 * generatedTiles;
         Instantiate(GameObjects[obstacle], new Vector3(mainGame.transform.position.x + x, 0, 0), Quaternion.identity);
     }
 }
