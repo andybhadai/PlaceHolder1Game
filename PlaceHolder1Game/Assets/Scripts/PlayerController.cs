@@ -24,8 +24,8 @@ public class PlayerController : MonoBehaviour
     private bool Movable = true;
     private Vector3 touchPress;
     private Vector3 touchRelease;
-    private float dragDistance;
-    public float dragDistancePercent;
+    public float dragDistance;
+    //public float dragDistancePercent;
     private bool newSwipe = false;
     public GameObject ScoreBoard;
     public TextMeshProUGUI Score;
@@ -110,7 +110,7 @@ public class PlayerController : MonoBehaviour
         if (!this.Movable) return;
 
         // Automatically run to the right
-        this.transform.Translate(Vector3.right * this.RunSpeed * Time.deltaTime);
+        this.transform.Translate(Vector3.left * this.RunSpeed * Time.deltaTime);
     }
 
     private void CheckSwipe()

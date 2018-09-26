@@ -22,9 +22,9 @@ GameObject:
   - component: {fileID: 212359455893568278}
   - component: {fileID: 50117133167936648}
   - component: {fileID: 61481776092357038}
-  - component: {fileID: 114061142472597078}
   - component: {fileID: 95625264654097278}
   - component: {fileID: 114266901538578552}
+  - component: {fileID: 114557570596943540}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -54,7 +54,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1833205165221262}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.01, y: -2.74, z: 0}
+  m_LocalPosition: {x: 0, y: -1.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4559723759747202}
@@ -67,7 +67,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1304428771600142}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6, y: 0, z: 0.024626669}
+  m_LocalPosition: {x: 6, y: -0.85, z: 0.024626669}
   m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_Children:
   - {fileID: 4256926834689688}
@@ -88,12 +88,12 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1.25
+  m_GravityScale: 3
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 5
 --- !u!61 &61481776092357038
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -117,7 +117,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 6}
+  m_Size: {x: 1, y: 4}
   m_EdgeRadius: 0
 --- !u!95 &95625264654097278
 Animator:
@@ -128,7 +128,7 @@ Animator:
   m_GameObject: {fileID: 1304428771600142}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c541bc025f99c48479f0708164e970fd, type: 2}
+  m_Controller: {fileID: 9100000, guid: a5a2de4aac4fa9d4f8cbe860ec1001cd, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -137,32 +137,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114061142472597078
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1304428771600142}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 747d0c25afb2e7142b34b9174d4ec938, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RunSpeed: 0
-  JumpSpeed: 0
-  JumpForce: 10
-  HitBack: 4
-  FeetPosition: {fileID: 4256926834689688}
-  CheckRadius: 0.5
-  WhatIsGround:
-    serializedVersion: 2
-    m_Bits: 256
-  TimeOut: 2000
-  dragDistancePercent: 15
-  maxDashTime: 1
-  dashSpeed: 10
-  dashStoppingSpeed: 0.1
-  MainGame: {fileID: 0}
 --- !u!114 &114266901538578552
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -175,7 +149,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainGame: {fileID: 0}
-  distanceToDeath: 10
+--- !u!114 &114557570596943540
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1304428771600142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52f2528d38da3a64388eebdd9e87d3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RunSpeed: 0
+  JumpSpeed: 0
+  JumpForce: 17
+  HitBack: 4
+  FeetPosition: {fileID: 4256926834689688}
+  CheckRadius: 0.5
+  WhatIsGround:
+    serializedVersion: 2
+    m_Bits: 256
+  TimeOut: 2000
+  dragDistancePercent: 40
+  ScoreBoard: {fileID: 0}
+  Score: {fileID: 0}
+  maxDashTime: 1.5
+  dashSpeed: 10
+  dashStoppingSpeed: 0.1
+  MainGame: {fileID: 0}
 --- !u!212 &212359455893568278
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c3a10444dc801846959c34555a59604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offScreenDistance: 20
+  offScreenDistance: 30
 --- !u!212 &212099501813603748
 SpriteRenderer:
   m_ObjectHideFlags: 1
