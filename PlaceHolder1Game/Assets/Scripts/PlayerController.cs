@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿using GooglePlayGames;
+using GooglePlayGames.BasicApi;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -27,6 +29,7 @@ public class PlayerController : MonoBehaviour
     private bool newSwipe = false;
     public GameObject ScoreBoard;
     public TextMeshProUGUI Score;
+    public TextMeshProUGUI LoggedIn;
 
     public float maxDashTime = 1.0f;
     public float dashSpeed = 1.0f;
@@ -44,11 +47,32 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         //GooglePlayGames.PlayGamesPlatform.Activate();
-        //this.Login();
+
+        PlayGamesClientConfiguration config = new PlayGamesClientConfiguration.Builder().Build();
+        PlayGamesPlatform.InitializeInstance(config);
+        PlayGamesPlatform.DebugLogEnabled = true;
+        PlayGamesPlatform.Activate();
+
+        this.Login();
+
         animator = GetComponent<Animator>();
 
         //This needs to be here otherwise the player dashes at the start of the game
         currentDashTime = maxDashTime;
+    }
+
+    private void Login()
+    {
+        Social.localUser.Authenticate(success => {
+            if (success)
+            {
+                LoggedIn.text = "Logged in!";
+            }
+            else
+            {
+                LoggedIn.text = "Not logged in!";
+            }
+        });
     }
 
     void Update()
@@ -161,7 +185,7 @@ public class PlayerController : MonoBehaviour
 
     private void ShowAndResetScoreBoard()
     {
-        Score.text = $"{TotalDistance * - 1} KM";
+        Score.text = $"{TotalDistance * - 1} M";
         ScoreBoard.transform.localPosition = new Vector3(-800, -119);
         ScoreBoard.SetActive(true);
     }
@@ -195,34 +219,10 @@ public class PlayerController : MonoBehaviour
         Social.ReportScore(score, leaderBoardId, success => { });
     }
 
-    private void ShowHighscores()
+    public void ShowHighscores()
     {
+        Debug.Log("Highscore");
         Social.ShowLeaderboardUI();
-    }
-
-    private void Login()
-    {
-        if (Social.localUser.authenticated)
-        {
-            // moet nog wat komen hier
-        }
-        else
-        {
-            // Log in to Google Games
-            Social.localUser.Authenticate(success =>
-            {
-                //this.OnConnectionResponse(success);
-
-                if (success)
-                {
-
-                }
-                else
-                {
-                    
-                }
-            });
-        }
     }
 
     private void Jump()
