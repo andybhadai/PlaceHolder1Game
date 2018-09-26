@@ -648,6 +648,7 @@ MonoBehaviour:
   - {fileID: 1128393556855214, guid: 229ec789d86766f4b966025e22e5456f, type: 2}
   - {fileID: 1574010250731824, guid: 32e4ffc80ae79194cb13c08363dbad34, type: 2}
   - {fileID: 1063991857971358, guid: 8212abd45038ae24f8b8a3b939a88c82, type: 2}
+  - {fileID: 1471555205149004, guid: c1d84f27c6ebb824ab78e8b4a5f32249, type: 2}
   mainGame: {fileID: 2020954934}
   chance: 90
   startTilesAmount: 6
@@ -836,11 +837,6 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b37942f8e5449ec469a21a06d450130c, type: 2}
   m_IsPrefabAsset: 0
---- !u!4 &1488892623 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4256926834689688, guid: 8790326cdb0790247b4e6f1f774f94e9,
-    type: 2}
-  m_PrefabInternal: {fileID: 1511014271}
 --- !u!1001 &1511014271
 Prefab:
   m_ObjectHideFlags: 0
@@ -880,133 +876,32 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 114061142472597078, guid: 8790326cdb0790247b4e6f1f774f94e9,
-        type: 2}
-      propertyPath: MainGame
-      value: 
-      objectReference: {fileID: 2020954934}
-    - target: {fileID: 50117133167936648, guid: 8790326cdb0790247b4e6f1f774f94e9,
-        type: 2}
-      propertyPath: m_Constraints
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114061142472597078, guid: 8790326cdb0790247b4e6f1f774f94e9,
-        type: 2}
-      propertyPath: HitBack
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114061142472597078, guid: 8790326cdb0790247b4e6f1f774f94e9,
-        type: 2}
-      propertyPath: RunSpeed
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1304428771600142, guid: 8790326cdb0790247b4e6f1f774f94e9, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114061142472597078, guid: 8790326cdb0790247b4e6f1f774f94e9,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 212359455893568278, guid: 8790326cdb0790247b4e6f1f774f94e9,
-        type: 2}
-      propertyPath: m_SortingLayerID
-      value: 1005618725
-      objectReference: {fileID: 0}
-    - target: {fileID: 212359455893568278, guid: 8790326cdb0790247b4e6f1f774f94e9,
-        type: 2}
-      propertyPath: m_SortingLayer
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114061142472597078, guid: 8790326cdb0790247b4e6f1f774f94e9,
-        type: 2}
-      propertyPath: JumpSpeed
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4559723759747202, guid: 8790326cdb0790247b4e6f1f774f94e9, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4559723759747202, guid: 8790326cdb0790247b4e6f1f774f94e9, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 61481776092357038, guid: 8790326cdb0790247b4e6f1f774f94e9,
-        type: 2}
-      propertyPath: m_Size.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 61481776092357038, guid: 8790326cdb0790247b4e6f1f774f94e9,
-        type: 2}
-      propertyPath: m_Size.y
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114061142472597078, guid: 8790326cdb0790247b4e6f1f774f94e9,
-        type: 2}
-      propertyPath: LoggedInText
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114061142472597078, guid: 8790326cdb0790247b4e6f1f774f94e9,
-        type: 2}
-      propertyPath: MainGame
-      value: 
-      objectReference: {fileID: 2020954934}
-    - target: {fileID: 114061142472597078, guid: 8790326cdb0790247b4e6f1f774f94e9,
-        type: 2}
-      propertyPath: dashSpeed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 114061142472597078, guid: 8790326cdb0790247b4e6f1f774f94e9,
-        type: 2}
-      propertyPath: dragDistancePercent
-      value: 15
-      objectReference: {fileID: 0}
     - target: {fileID: 114266901538578552, guid: 8790326cdb0790247b4e6f1f774f94e9,
         type: 2}
       propertyPath: mainGame
       value: 
       objectReference: {fileID: 2020954934}
-    - target: {fileID: 95625264654097278, guid: 8790326cdb0790247b4e6f1f774f94e9,
+    - target: {fileID: 114557570596943540, guid: 8790326cdb0790247b4e6f1f774f94e9,
         type: 2}
-      propertyPath: m_Controller
+      propertyPath: ScoreBoard
       value: 
-      objectReference: {fileID: 9100000, guid: a5a2de4aac4fa9d4f8cbe860ec1001cd, type: 2}
-    - target: {fileID: 61481776092357038, guid: 8790326cdb0790247b4e6f1f774f94e9,
+      objectReference: {fileID: 1557058530}
+    - target: {fileID: 114557570596943540, guid: 8790326cdb0790247b4e6f1f774f94e9,
         type: 2}
-      propertyPath: m_UsedByEffector
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 61481776092357038, guid: 8790326cdb0790247b4e6f1f774f94e9,
+      propertyPath: Score
+      value: 
+      objectReference: {fileID: 1666918385}
+    - target: {fileID: 114557570596943540, guid: 8790326cdb0790247b4e6f1f774f94e9,
         type: 2}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 61481776092357038, guid: 8790326cdb0790247b4e6f1f774f94e9,
+      propertyPath: MainGame
+      value: 
+      objectReference: {fileID: 2020954934}
+    - target: {fileID: 114557570596943540, guid: 8790326cdb0790247b4e6f1f774f94e9,
         type: 2}
-      propertyPath: m_Enabled
-      value: 1
+      propertyPath: dragDistance
+      value: 80
       objectReference: {fileID: 0}
-    - target: {fileID: 212359455893568278, guid: 8790326cdb0790247b4e6f1f774f94e9,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4256926834689688, guid: 8790326cdb0790247b4e6f1f774f94e9, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -1.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4256926834689688, guid: 8790326cdb0790247b4e6f1f774f94e9, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 50117133167936648, guid: 8790326cdb0790247b4e6f1f774f94e9,
-        type: 2}
-      propertyPath: m_GravityScale
-      value: 3
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114061142472597078, guid: 8790326cdb0790247b4e6f1f774f94e9, type: 2}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8790326cdb0790247b4e6f1f774f94e9, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &1557058530
@@ -1426,39 +1321,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AudioData: {fileID: 2020954935}
---- !u!1 &2080749815 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1304428771600142, guid: 8790326cdb0790247b4e6f1f774f94e9,
-    type: 2}
-  m_PrefabInternal: {fileID: 1511014271}
---- !u!114 &2080749818
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2080749815}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52f2528d38da3a64388eebdd9e87d3f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RunSpeed: 0
-  JumpSpeed: 0
-  JumpForce: 17
-  HitBack: 4
-  FeetPosition: {fileID: 1488892623}
-  CheckRadius: 0.5
-  WhatIsGround:
-    serializedVersion: 2
-    m_Bits: 256
-  TimeOut: 2000
-  dragDistancePercent: 40
-  ScoreBoard: {fileID: 1557058530}
-  Score: {fileID: 1666918385}
-  maxDashTime: 1.5
-  dashSpeed: 10
-  dashStoppingSpeed: 0.1
-  MainGame: {fileID: 2020954934}
 --- !u!4 &2129874237 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4559723759747202, guid: 8790326cdb0790247b4e6f1f774f94e9,
