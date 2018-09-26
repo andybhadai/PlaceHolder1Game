@@ -190,18 +190,6 @@ public class PlayerController : MonoBehaviour
         ScoreBoard.SetActive(true);
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Obstacle")
-        {
-            // Bounce player to the left when he hit an obstacle
-            GetComponent<Rigidbody2D>().velocity = Vector2.right * this.HitBack;
-            this.Movable = false;
-
-            StartCoroutine(MoveAgainCoroutine(0.5f));
-        }
-    }
-
     // Implemented in case the player needs to be stunned for a few seconds
     IEnumerator MoveAgainCoroutine(float timeOut)
     {
@@ -287,7 +275,9 @@ public class PlayerController : MonoBehaviour
         if (Collision.transform.gameObject.tag == "DashableObstacle" && isDashing == true)
         {
             Collision.transform.Translate(10f, 0, 0);
-        }else {
+        } else if (Collision.transform.gameObject.tag == "Ring") {
+            // Add fuel
+        } else {
             this.GetComponent<EndGameTrigger>().GameOver();
         }
     }
