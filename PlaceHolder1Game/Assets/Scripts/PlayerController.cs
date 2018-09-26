@@ -37,18 +37,29 @@ public class PlayerController : MonoBehaviour
     private bool DashDirection; //True = Left, False = Right
 
     public GameObject MainGame;
+    Animator animator;
+
+    private float yOnDash;
 
     void Start()
     {
         //GooglePlayGames.PlayGamesPlatform.Activate();
         //this.Login();
-        //ActivateScoreBoard();
+        animator = GetComponent<Animator>();
+
+        //This needs to be here otherwise the player dashes at the start of the game
+        currentDashTime = maxDashTime;
     }
 
     void Update()
     {
         if (IsGrounded()) {
             hasDashed = false;
+            animator.SetBool("isJumpingUp", false);
+        }
+        else
+        {
+            animator.SetBool("isJumpingUp", true);
         }
 
         this.CalculateScore();
@@ -217,7 +228,11 @@ public class PlayerController : MonoBehaviour
     private void Jump()
     {
         // If the player is on the ground, you can jump
-        if (IsGrounded()) GetComponent<Rigidbody2D>().velocity = Vector2.up * this.JumpForce;
+        if (IsGrounded())
+        {
+            animator.SetBool("isJumpingUp", true);
+            GetComponent<Rigidbody2D>().velocity = Vector2.up * this.JumpForce;
+        }
     }
 
     private void Dive()
@@ -235,6 +250,7 @@ public class PlayerController : MonoBehaviour
             currentDashTime = 0.0f;
             hasDashed = true;
             isDashing = true;
+            yOnDash = transform.position.y;
         }
     }
 
@@ -248,13 +264,17 @@ public class PlayerController : MonoBehaviour
     {
         if (currentDashTime < maxDashTime)
         {
+            Vector3 tmp = transform.position;
+            tmp.y = yOnDash;
+            transform.position = tmp;
             currentDashTime += dashStoppingSpeed;
             if (DashDirection) MainGame.transform.Translate(Vector3.left * dashSpeed * Time.deltaTime);
             else MainGame.transform.Translate(Vector3.right * dashSpeed * Time.deltaTime);
-
         }
         else
-        isDashing = false;
+        {
+            isDashing = false;
+        }
     }
 
     private bool IsGrounded()
