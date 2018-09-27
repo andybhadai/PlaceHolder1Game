@@ -1,5 +1,6 @@
 ﻿using GooglePlayGames;
 using GooglePlayGames.BasicApi;
+using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -44,35 +45,17 @@ public class PlayerController : MonoBehaviour
 
     private float yOnDash;
 
+    void Awake()
+    {
+        if (!PlayerPrefs.HasKey("username")) PlayerPrefs.SetString("username", Guid.NewGuid().ToString());
+    }
+
     void Start()
     {
-        //GooglePlayGames.PlayGamesPlatform.Activate();
-
-        PlayGamesClientConfiguration config = new PlayGamesClientConfiguration.Builder().Build();
-        PlayGamesPlatform.InitializeInstance(config);
-        PlayGamesPlatform.DebugLogEnabled = true;
-        PlayGamesPlatform.Activate();
-
-        //this.Login();
-
         animator = GetComponent<Animator>();
 
         //This needs to be here otherwise the player dashes at the start of the game
         currentDashTime = maxDashTime;
-    }
-
-    private void Login()
-    {
-        Social.localUser.Authenticate(success => {
-            if (success)
-            {
-                LoggedIn.text = "Logged in!";
-            }
-            else
-            {
-                LoggedIn.text = "Not logged in!";
-            }
-        });
     }
 
     void Update()
@@ -195,22 +178,6 @@ public class PlayerController : MonoBehaviour
     {
         yield return new WaitForSeconds(timeOut);
         this.Movable = true;
-    }
-
-    private void GameOver()
-    {
-        this.AddScore(leaderboard_highscore, this.TotalDistance);
-    }
-
-    private void AddScore(string leaderBoardId, long score)
-    {
-        Social.ReportScore(score, leaderBoardId, success => { });
-    }
-
-    public void ShowHighscores()
-    {
-        Debug.Log("Highscore");
-        Social.ShowLeaderboardUI();
     }
 
     private void Jump()
