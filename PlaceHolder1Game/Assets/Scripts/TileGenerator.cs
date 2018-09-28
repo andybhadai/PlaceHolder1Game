@@ -7,9 +7,11 @@ public class TileGenerator : MonoBehaviour {
     public GameObject[] GameObjects;
     private int iterations = 0;
     public GameObject mainGame;
-    public int chance;
+    public int obstacleChance;
+    public int ringObstacleChance;
     private int generatedTiles;
     public int startTilesAmount;
+    public int tileWidth;
 
 
     void Start() 
@@ -40,21 +42,22 @@ public class TileGenerator : MonoBehaviour {
     {
         generatedTiles++;
 
-        int random = Random.Range(0, 100);
+        // int random = Random.Range(0, 100);
+        // if(random < obstacleChance)
+        // {
+        //     Spawn(RandomNumber());
+        // }
+        // else
+        // {
+        //     Spawn(0);
+        // }
 
-        if(random < chance)
-        {
-            Spawn(RandomNumber());
-        }
-        else
-        {
-            Spawn(0);
-        }
+        Spawn(RandomNumber());
     }
 
     private void Spawn(int obstacle)
     {
-        int x = -15 * generatedTiles;
+        int x = -tileWidth * generatedTiles;
         Instantiate(GameObjects[obstacle], new Vector3(mainGame.transform.position.x + x, 0, 0), Quaternion.identity);
     }
 }

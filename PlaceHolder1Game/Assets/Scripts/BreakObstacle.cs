@@ -11,7 +11,6 @@ public class BreakObstacle : MonoBehaviour
     void Start()
     {
 		ResetSprite();
-		Debug.Log(sprites.Count);
     }
 
     void OnMouseDown()

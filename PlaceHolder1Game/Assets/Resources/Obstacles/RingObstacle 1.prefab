@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4726452065167546}
   - component: {fileID: 212471372769431964}
   - component: {fileID: 61595894130286216}
-  - component: {fileID: 114904677909302914}
   m_Layer: 0
   m_Name: RingObstacle 1
   m_TagString: Ring
@@ -97,18 +96,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.5496507, y: 13.726591}
   m_EdgeRadius: 0
---- !u!114 &114904677909302914
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1191270195956306}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04abfd0c8477ec54da69c80f122f9640, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 1
 --- !u!212 &212146891945833298
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -272,11 +272,22 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerEnter2D (Collider2D Collision)
     {
-        if (Collision.transform.gameObject.tag == "DashableObstacle" && isDashing == true)
-        {
-            Collision.transform.Translate(10f, 0, 0);
+        if (Collision.transform.gameObject.tag == "DashableObstacle" && isDashing == true){
+            Collision.GetComponent<BoxCollider2D>().enabled = false;
+            Collision.GetComponent<SpriteRenderer>().enabled = false;
+            //Collision.transform.Translate(10f, 0, 0);
+        } else if (Collision.transform.gameObject.tag == "DashableWall" && isDashing == true){
+            Collision.GetComponent<BoxCollider2D>().enabled = false;
+            Collision.GetComponent<particles>().BeginParticles();
+        } else if (Collision.transform.gameObject.tag == "EndWall"){
+            Collision.GetComponent<BoxCollider2D>().enabled = false;
+            Collision.GetComponent<particles>().BeginParticles();
         } else if (Collision.transform.gameObject.tag == "Ring") {
-            // Add fuel
+            //Fire 
+        } else if (Collision.transform.gameObject.tag == "GasBig") {
+            this.GetComponent<GasFill>().MaxGas();
+        } else if (Collision.transform.gameObject.tag == "GasSmall") {
+            this.GetComponent<GasFill>().FillGas();
         } else {
             this.GetComponent<EndGameTrigger>().GameOver();
         }
