@@ -7,6 +7,11 @@ TagManager:
   - Obstacle
   - DashableObstacle
   - Ring
+  - GasBig
+  - GasSmall
+  - DashableWall
+  - EndWall
+  - Coin
   layers:
   - Default
   - TransparentFX
@@ -53,11 +58,14 @@ TagManager:
   - name: Mainground
     uniqueID: 1326085231
     locked: 0
-  - name: Obstacles
+  - name: ObstacleBackGround
     uniqueID: 1693891309
     locked: 0
   - name: Player
     uniqueID: 1005618725
+    locked: 0
+  - name: ObstacleForeGround
+    uniqueID: 3858920069
     locked: 0
   - name: Foreground
     uniqueID: 2533509035
