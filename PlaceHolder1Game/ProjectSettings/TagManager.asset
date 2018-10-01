@@ -11,6 +11,7 @@ TagManager:
   - GasSmall
   - DashableWall
   - EndWall
+  - Coin
   layers:
   - Default
   - TransparentFX

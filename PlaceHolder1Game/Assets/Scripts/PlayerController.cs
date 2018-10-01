@@ -272,7 +272,9 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerEnter2D (Collider2D Collision)
     {
-        if (Collision.transform.gameObject.tag == "DashableObstacle" && isDashing == true){
+        if (Collision.transform.gameObject.tag == "Obstacle"){
+            this.GetComponent<EndGameTrigger>().GameOver();
+        } else if (Collision.transform.gameObject.tag == "DashableObstacle" && isDashing == true){
             Collision.GetComponent<BoxCollider2D>().enabled = false;
             Collision.GetComponent<SpriteRenderer>().enabled = false;
             //Collision.transform.Translate(10f, 0, 0);
