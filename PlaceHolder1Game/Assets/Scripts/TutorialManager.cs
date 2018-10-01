@@ -17,7 +17,7 @@ public class TutorialManager : MonoBehaviour {
 
         if(x < -30 && x >= -40)
         {
-            tutorialText.SetText("Swipe left to dash");
+            tutorialText.SetText("Swipe left to dash. Jump and dash to kill birds!");
         }else if(x < -50 && x >= -80)
         {
             tutorialText.SetText("Tap three times to break big rocks!");
