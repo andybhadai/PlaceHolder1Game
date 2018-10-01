@@ -630,6 +630,11 @@ MonoBehaviour:
   - {fileID: 1396988059452126, guid: 26e10c9a81ccf3a4b80886120d712225, type: 2}
   - {fileID: 1968047203006332, guid: 4d3024b9c1ea458449065a93a6e42dea, type: 2}
   - {fileID: 1345446187096456, guid: 9808800c8cc6c004d8883400678f4cc3, type: 2}
+  - {fileID: 1360938652211186, guid: 8aa8e468db20e9641a350a6f2da94166, type: 2}
+  - {fileID: 1809263292662288, guid: 592dea831363dee40ae5d95b525337c9, type: 2}
+  - {fileID: 1252439076159958, guid: d2a9b5ada8a1e7046b3c5dd4597ff943, type: 2}
+  - {fileID: 1985259513878008, guid: 360398c342810b5459542c5706f426b0, type: 2}
+  - {fileID: 1333112885360142, guid: 7f2de4a006e2e7d49a0826319fcfd731, type: 2}
   mainGame: {fileID: 2020954934}
   obstacleChance: 70
   ringObstacleChance: 20
