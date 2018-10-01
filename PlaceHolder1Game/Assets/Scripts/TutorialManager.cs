@@ -15,12 +15,16 @@ public class TutorialManager : MonoBehaviour {
 
         Debug.Log($"X: {x}, Y: {y}");
 
-        if(x < -30 && x >= -40)
-        {
-            tutorialText.SetText("Swipe left to dash. Jump and dash to kill birds!");
-        }else if(x < -50 && x >= -80)
+        if(x < -40 && x >= -80)
         {
             tutorialText.SetText("Tap three times to break big rocks!");
+        }else if(x < -80 && x >= -100)
+        {
+            tutorialText.SetText("Dash into houses.");
+        }
+        else if (x < -110 && x >= -150)
+        {
+            tutorialText.SetText("Fill your fuel level with drops of oil or jerrycans");
         }
     }
 }
