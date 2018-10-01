@@ -29,13 +29,14 @@ public class TileGenerator : MonoBehaviour {
 
     private int RandomNumber()
     {
-        return Random.Range(1, GameObjects.Length);
+        return Random.Range(0, GameObjects.Length);
     }
 
     public void RemoveTile() 
     {
-        generatedTiles--;
+        generatedTiles = generatedTiles - 2;
         NewTile();
+        generatedTiles++;
     }
 
     public void NewTile()
