@@ -24,7 +24,7 @@ public class Settings : MonoBehaviour {
 
     bool GetPlayerSoundOn()
     {
-        return Convert.ToBoolean(PlayerPrefs.GetInt("soundOn"));
+        return Convert.ToBoolean(PlayerPrefs.GetInt("soundOn", 1));
     }
 
     private void SetSprite()
