@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TutorialManager : MonoBehaviour {
 
@@ -25,6 +26,22 @@ public class TutorialManager : MonoBehaviour {
         else if (x < -110 && x >= -150)
         {
             tutorialText.SetText("Fill your fuel level with drops of oil or jerrycans");
+        }
+        else if (x < -150 && x >= -180)
+        {
+            tutorialText.SetText("Jump through rings to dash");
+        }
+        else if (x < -180 && x >= -200)
+        {
+            tutorialText.SetText("Dash through birds to kill them");
+        }
+        else if (x < -200 && x >= -220)
+        {
+            tutorialText.SetText("TUTORIAL COMPLETED!");
+        }
+        else if (x < -240)
+        {
+            SceneManager.LoadScene(0);
         }
     }
 }
