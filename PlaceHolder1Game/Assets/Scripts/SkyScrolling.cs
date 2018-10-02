@@ -18,8 +18,8 @@ public class SkyScrolling : MonoBehaviour {
 	void FixedUpdate () {
 		transform.Translate (Vector2.left * speed * Time.deltaTime);
 	}
-
-	void OnBecameInvisible() {
-    	transform.Translate(-distance - spacing,0,0);
-    }
+	void OnBecameInvisible()
+	{
+    	transform.Translate(-distance - spacing, 0, 0);
+	}
 }
