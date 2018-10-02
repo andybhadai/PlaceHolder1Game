@@ -978,11 +978,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4907603600210396, guid: 099001b1d091b6844b62dcb8624ea1b1, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -190
+      value: -200
       objectReference: {fileID: 0}
     - target: {fileID: 4907603600210396, guid: 099001b1d091b6844b62dcb8624ea1b1, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4907603600210396, guid: 099001b1d091b6844b62dcb8624ea1b1, type: 2}
       propertyPath: m_LocalPosition.z
