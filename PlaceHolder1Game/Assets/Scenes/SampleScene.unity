@@ -171,6 +171,46 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114441789830931904, guid: 68fa053b12d6b7e4683f94a17d77c3ca,
+        type: 2}
+      propertyPath: Camera
+      value: 
+      objectReference: {fileID: 519420028}
+    - target: {fileID: 114236381364088484, guid: 68fa053b12d6b7e4683f94a17d77c3ca,
+        type: 2}
+      propertyPath: Camera
+      value: 
+      objectReference: {fileID: 519420028}
+    - target: {fileID: 114625157532971680, guid: 68fa053b12d6b7e4683f94a17d77c3ca,
+        type: 2}
+      propertyPath: Camera
+      value: 
+      objectReference: {fileID: 519420028}
+    - target: {fileID: 114612074144243102, guid: 68fa053b12d6b7e4683f94a17d77c3ca,
+        type: 2}
+      propertyPath: Camera
+      value: 
+      objectReference: {fileID: 519420028}
+    - target: {fileID: 114807376860038274, guid: 68fa053b12d6b7e4683f94a17d77c3ca,
+        type: 2}
+      propertyPath: Camera
+      value: 
+      objectReference: {fileID: 519420028}
+    - target: {fileID: 114219481834111512, guid: 68fa053b12d6b7e4683f94a17d77c3ca,
+        type: 2}
+      propertyPath: Camera
+      value: 
+      objectReference: {fileID: 519420028}
+    - target: {fileID: 212109215044123356, guid: 68fa053b12d6b7e4683f94a17d77c3ca,
+        type: 2}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 212109215044123356, guid: 68fa053b12d6b7e4683f94a17d77c3ca,
+        type: 2}
+      propertyPath: m_FlipY
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68fa053b12d6b7e4683f94a17d77c3ca, type: 2}
   m_IsPrefabAsset: 0
@@ -278,7 +318,7 @@ TextMesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 269629565}
-  m_Text: HELLOOOOO
+  m_Text: 
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -979,6 +1019,98 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gasBar: {fileID: 2025125096}
   ringFillAmount: 0.5
+--- !u!96 &1189360890
+TrailRenderer:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1189360882}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_RenderingLayerMask: 4294967295
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Time: 0.1
+  m_Parameters:
+    serializedVersion: 2
+    widthMultiplier: 1
+    widthCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    colorGradient:
+      serializedVersion: 2
+      key0: {r: 0.5188679, g: 0.5188679, b: 0.5188679, a: 1}
+      key1: {r: 0.5188679, g: 0.5188679, b: 0.5188679, a: 1}
+      key2: {r: 0, g: 0, b: 0, a: 0}
+      key3: {r: 0, g: 0, b: 0, a: 0}
+      key4: {r: 0, g: 0, b: 0, a: 0}
+      key5: {r: 0, g: 0, b: 0, a: 0}
+      key6: {r: 0, g: 0, b: 0, a: 0}
+      key7: {r: 0, g: 0, b: 0, a: 0}
+      ctime0: 0
+      ctime1: 65535
+      ctime2: 0
+      ctime3: 0
+      ctime4: 0
+      ctime5: 0
+      ctime6: 0
+      ctime7: 0
+      atime0: 0
+      atime1: 65535
+      atime2: 0
+      atime3: 0
+      atime4: 0
+      atime5: 0
+      atime6: 0
+      atime7: 0
+      m_Mode: 1
+      m_NumColorKeys: 2
+      m_NumAlphaKeys: 2
+    numCornerVertices: 0
+    numCapVertices: 0
+    alignment: 0
+    textureMode: 0
+    generateLightingData: 0
+  m_MinVertexDistance: 0.1
+  m_Autodestruct: 0
+  m_Emitting: 1
 --- !u!1001 &1350362359
 Prefab:
   m_ObjectHideFlags: 0
@@ -1174,6 +1306,31 @@ Prefab:
         type: 2}
       propertyPath: m_GravityScale
       value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114557570596943540, guid: 8790326cdb0790247b4e6f1f774f94e9,
+        type: 2}
+      propertyPath: maxSuperDashTime
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114557570596943540, guid: 8790326cdb0790247b4e6f1f774f94e9,
+        type: 2}
+      propertyPath: superDashSpeed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 114557570596943540, guid: 8790326cdb0790247b4e6f1f774f94e9,
+        type: 2}
+      propertyPath: cannonForce
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 114557570596943540, guid: 8790326cdb0790247b4e6f1f774f94e9,
+        type: 2}
+      propertyPath: maxCannonTime
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114557570596943540, guid: 8790326cdb0790247b4e6f1f774f94e9,
+        type: 2}
+      propertyPath: cannonSpeed
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8790326cdb0790247b4e6f1f774f94e9, type: 2}

@@ -12,6 +12,8 @@ TagManager:
   - DashableWall
   - EndWall
   - Coin
+  - SuperDash
+  - Cannon
   layers:
   - Default
   - TransparentFX

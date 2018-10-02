@@ -33,10 +33,15 @@ public class PlayerController : MonoBehaviour
     public TextMeshProUGUI LoggedIn;
 
     public float maxDashTime = 1.0f;
+    public float maxSuperDashTime = 1.0f;
     public float dashSpeed = 1.0f;
+    public float superDashSpeed = 1.0f;
+    public float cannonSpeed = 1.0f;
     public float dashStoppingSpeed = 0.1f;
     private float currentDashTime;
     private bool isDashing = false;
+    private bool isSuperDashing = false;
+    private bool isCannonFire = false;
     private bool hasDashed;
     private bool DashDirection; //True = Left, False = Right
 
@@ -44,6 +49,8 @@ public class PlayerController : MonoBehaviour
     Animator animator;
 
     private float yOnDash;
+
+    public float cannonForce = 1f;
 
     void Awake()
     {
@@ -84,6 +91,7 @@ public class PlayerController : MonoBehaviour
         //this.MovePlayer();
 
         UpdateDash();
+        UpdateSuperDash();
     }
 
 
@@ -206,7 +214,17 @@ public class PlayerController : MonoBehaviour
             hasDashed = true;
             isDashing = true;
             yOnDash = transform.position.y;
+            animator.SetBool("isDashing", true);
         }
+    }
+
+    private void SuperDash()
+    {
+        currentDashTime = 0.0f;
+        hasDashed = true;
+        isSuperDashing = true;
+        yOnDash = transform.position.y;
+        animator.SetBool("isDashing", true);
     }
 
     private bool CanDash()
@@ -217,7 +235,7 @@ public class PlayerController : MonoBehaviour
 
     private void UpdateDash()
     {
-        if (currentDashTime < maxDashTime)
+        if (currentDashTime < maxDashTime && isDashing)
         {
             Vector3 tmp = transform.position;
             tmp.y = yOnDash;
@@ -229,6 +247,24 @@ public class PlayerController : MonoBehaviour
         else
         {
             isDashing = false;
+            animator.SetBool("isDashing", false);
+        }
+    }
+
+    private void UpdateSuperDash()
+    {
+        if (currentDashTime < maxSuperDashTime && isSuperDashing)
+        {
+            Vector3 tmp = transform.position;
+            tmp.y = yOnDash;
+            transform.position = tmp;
+            currentDashTime += dashStoppingSpeed;
+            MainGame.transform.Translate(Vector3.left * superDashSpeed * Time.deltaTime);
+        }
+        else
+        {
+            isSuperDashing = false;
+            animator.SetBool("isDashing", false);
         }
     }
 
@@ -251,8 +287,10 @@ public class PlayerController : MonoBehaviour
         } else if (Collision.transform.gameObject.tag == "EndWall"){
             Collision.GetComponent<BoxCollider2D>().enabled = false;
             Collision.GetComponent<particles>().BeginParticles();
-        } else if (Collision.transform.gameObject.tag == "Ring") {
-            //Fire 
+        } else if (Collision.transform.gameObject.tag == "SuperDash") {
+            SuperDash();
+        } else if (Collision.transform.gameObject.tag == "Cannon") {
+            
         } else if (Collision.transform.gameObject.tag == "GasBig") {
             this.GetComponent<GasFill>().MaxGas();
         } else if (Collision.transform.gameObject.tag == "GasSmall") {
