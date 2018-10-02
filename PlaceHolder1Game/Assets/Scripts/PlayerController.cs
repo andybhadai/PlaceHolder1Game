@@ -39,6 +39,7 @@ public class PlayerController : MonoBehaviour
     private bool isDashing = false;
     private bool hasDashed;
     private bool DashDirection; //True = Left, False = Right
+    private int amountOfCoins;
 
     public GameObject MainGame;
     Animator animator;
@@ -56,6 +57,7 @@ public class PlayerController : MonoBehaviour
 
         //This needs to be here otherwise the player dashes at the start of the game
         currentDashTime = maxDashTime;
+        amountOfCoins = PlayerPrefs.GetInt("amountOfCoins", 0);
     }
 
     void Update()
@@ -258,9 +260,12 @@ public class PlayerController : MonoBehaviour
         } else if (Collision.transform.gameObject.tag == "GasSmall") {
             this.GetComponent<GasFill>().FillGas();
         } else if (Collision.transform.gameObject.tag == "Coin") {
+            amountOfCoins++;
             Debug.Log("OOHHHH, YEAHH, COINS!");
         }
         else {
+            PlayerPrefs.SetInt("amountOfCoins", amountOfCoins);
+            PlayerPrefs.Save();
             this.GetComponent<EndGameTrigger>().GameOver();
         }
     }
