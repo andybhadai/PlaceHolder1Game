@@ -79,7 +79,6 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetBool("isJumpingUp", true);
         }
-
         this.CalculateScore();
 
         if(TotalDistance % 100 == 0)
