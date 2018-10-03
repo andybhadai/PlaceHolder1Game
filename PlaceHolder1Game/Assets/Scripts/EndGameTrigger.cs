@@ -12,9 +12,17 @@ public class EndGameTrigger : MonoBehaviour {
 		SaveScoreLocally();
 		SceneManager.LoadScene("GameOver");
 	}
+
     private void SaveScoreLocally()
     {
         PlayerPrefs.SetFloat("score", mainGame.transform.position.x);
+        PlayerPrefs.Save();
+    }
+
+    public void SaveCoins(int coins)
+    {
+        Debug.Log(coins);
+        PlayerPrefs.SetInt("amountOfCoins", coins);
         PlayerPrefs.Save();
     }
 }

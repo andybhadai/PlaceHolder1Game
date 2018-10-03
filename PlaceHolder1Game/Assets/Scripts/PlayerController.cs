@@ -65,7 +65,10 @@ public class PlayerController : MonoBehaviour
 
         //This needs to be here otherwise the player dashes at the start of the game
         currentDashTime = maxDashTime;
-        amountOfCoins = PlayerPrefs.GetInt("amountOfCoins", 0);
+        amountOfCoins = GetAmountOfCoins();
+
+        Debug.Log(amountOfCoins);
+        Debug.Log(GetAmountOfCoins());
         SetCoinsText();
     }
 
@@ -280,7 +283,7 @@ public class PlayerController : MonoBehaviour
     void OnTriggerEnter2D (Collider2D Collision)
     {
         if (Collision.transform.gameObject.tag == "Obstacle") {
-            this.GetComponent<EndGameTrigger>().GameOver();
+            GameOver();
         } else if (Collision.transform.gameObject.tag == "DashableObstacle" && isDashing == true) {
             Collision.GetComponent<BoxCollider2D>().enabled = false;
             Collision.GetComponent<SpriteRenderer>().enabled = false;
@@ -304,18 +307,33 @@ public class PlayerController : MonoBehaviour
         } else if (Collision.transform.gameObject.tag == "Coin") {
             amountOfCoins++;
             SetCoinsText();
-            Debug.Log("OOHHHH, YEAHH, COINS!");
             Collision.gameObject.SetActive(false);
         }
         else {
-            PlayerPrefs.SetInt("amountOfCoins", amountOfCoins);
-            PlayerPrefs.Save();
-            this.GetComponent<EndGameTrigger>().GameOver();
+            GameOver();
         }
     }
 
     private void SetCoinsText()
     {
         CoinsAmountText.text = amountOfCoins.ToString();
+    }
+
+    private int GetAmountOfCoins()
+    {
+        if (PlayerPrefs.HasKey("amountOfCoins"))
+        {
+            return PlayerPrefs.GetInt("amountOfCoins");
+        }
+        else
+        {
+            return 0;
+        }
+    }
+
+    public void GameOver()
+    {
+        this.GetComponent<EndGameTrigger>().SaveCoins(amountOfCoins);
+        this.GetComponent<EndGameTrigger>().GameOver();
     }
 }

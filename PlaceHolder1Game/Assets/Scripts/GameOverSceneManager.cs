@@ -13,14 +13,9 @@ public class GameOverSceneManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         int score = (int) PlayerPrefs.GetFloat("score", 0f);
-        this.GameOverText.text = $"{score * -1} M";
+        GameOverText.text = $"{score * -1} M";
 
         // Highscore will be saved to server when player is game over
         this.GetComponent<Highscore>().AddHighscore();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
 	}
 }

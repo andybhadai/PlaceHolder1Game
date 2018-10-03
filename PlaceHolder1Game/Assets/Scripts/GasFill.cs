@@ -19,7 +19,7 @@ public class GasFill : MonoBehaviour {
 
 		if(gasBar.fillAmount == 0)
 		{
-			this.GetComponent<EndGameTrigger>().GameOver();
+            this.GetComponent<PlayerController>().GameOver();
 		}
 	}
 
