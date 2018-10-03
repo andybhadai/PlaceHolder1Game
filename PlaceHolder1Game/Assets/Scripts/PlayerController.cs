@@ -295,11 +295,14 @@ public class PlayerController : MonoBehaviour
             
         } else if (Collision.transform.gameObject.tag == "GasBig") {
             this.GetComponent<GasFill>().MaxGas();
+            Collision.gameObject.SetActive(false);
         } else if (Collision.transform.gameObject.tag == "GasSmall") {
             this.GetComponent<GasFill>().FillGas();
+            Collision.gameObject.SetActive(false);
         } else if (Collision.transform.gameObject.tag == "Coin") {
             amountOfCoins++;
             Debug.Log("OOHHHH, YEAHH, COINS!");
+            Collision.gameObject.SetActive(false);
         }
         else {
             PlayerPrefs.SetInt("amountOfCoins", amountOfCoins);
