@@ -31,6 +31,7 @@ public class PlayerController : MonoBehaviour
     public GameObject ScoreBoard;
     public TextMeshProUGUI Score;
     public TextMeshProUGUI LoggedIn;
+    public Text CoinsAmountText;
 
     public float maxDashTime = 1.0f;
     public float maxSuperDashTime = 1.0f;
@@ -65,6 +66,7 @@ public class PlayerController : MonoBehaviour
         //This needs to be here otherwise the player dashes at the start of the game
         currentDashTime = maxDashTime;
         amountOfCoins = PlayerPrefs.GetInt("amountOfCoins", 0);
+        SetCoinsText();
     }
 
     void Update()
@@ -299,12 +301,17 @@ public class PlayerController : MonoBehaviour
             this.GetComponent<GasFill>().FillGas();
         } else if (Collision.transform.gameObject.tag == "Coin") {
             amountOfCoins++;
-            Debug.Log("OOHHHH, YEAHH, COINS!");
+            SetCoinsText();
         }
         else {
             PlayerPrefs.SetInt("amountOfCoins", amountOfCoins);
             PlayerPrefs.Save();
             this.GetComponent<EndGameTrigger>().GameOver();
         }
+    }
+
+    private void SetCoinsText()
+    {
+        CoinsAmountText.text = amountOfCoins.ToString();
     }
 }
