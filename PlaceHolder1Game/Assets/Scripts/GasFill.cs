@@ -5,8 +5,10 @@ using UnityEngine.UI;
 
 public class GasFill : MonoBehaviour {
 
-	public Image gasBar; 
+	public Image gasBar;
+	public float gasLoseAmount;
 	public float ringFillAmount;
+	public float dashCostAmount;
 
 	// Use this for initialization
 	void Start () {
@@ -15,7 +17,7 @@ public class GasFill : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		gasBar.fillAmount -= 0.001f;
+		gasBar.fillAmount -= gasLoseAmount;
 
 		if(gasBar.fillAmount == 0)
 		{
@@ -31,5 +33,10 @@ public class GasFill : MonoBehaviour {
 	public void FillGas() 
 	{
 		gasBar.fillAmount += ringFillAmount;
+	}
+
+	public void LoseGas()
+	{
+		gasBar.fillAmount -= dashCostAmount;
 	}
 }

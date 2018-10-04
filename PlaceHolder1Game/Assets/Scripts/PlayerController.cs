@@ -221,6 +221,7 @@ public class PlayerController : MonoBehaviour
             isDashing = true;
             yOnDash = transform.position.y;
             animator.SetBool("isDashing", true);
+            GetComponent<GasFill>().LoseGas();
         }
     }
 
