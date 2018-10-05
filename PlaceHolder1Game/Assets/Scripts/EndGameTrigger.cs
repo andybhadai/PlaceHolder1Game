@@ -21,7 +21,6 @@ public class EndGameTrigger : MonoBehaviour {
 
     public void SaveCoins(int coins)
     {
-        Debug.Log(coins);
         PlayerPrefs.SetInt("amountOfCoins", coins);
         PlayerPrefs.Save();
     }
