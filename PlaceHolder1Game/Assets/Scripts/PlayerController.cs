@@ -40,8 +40,8 @@ public class PlayerController : MonoBehaviour
     public float cannonSpeed = 1.0f;
     public float dashStoppingSpeed = 0.1f;
     private float currentDashTime;
-    private bool isDashing = false;
-    private bool isSuperDashing = false;
+    public bool isDashing = false;
+    public bool isSuperDashing = false;
     private bool isCannonFire = false;
     private bool hasDashed;
     private bool DashDirection; //True = Left, False = Right
@@ -65,10 +65,8 @@ public class PlayerController : MonoBehaviour
 
         //This needs to be here otherwise the player dashes at the start of the game
         currentDashTime = maxDashTime;
-        amountOfCoins = GetAmountOfCoins();
 
-        Debug.Log(amountOfCoins);
-        Debug.Log(GetAmountOfCoins());
+        amountOfCoins = GetAmountOfCoins();
         SetCoinsText();
     }
 
