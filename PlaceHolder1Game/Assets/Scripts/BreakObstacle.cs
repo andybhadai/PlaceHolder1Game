@@ -6,7 +6,7 @@ public class BreakObstacle : MonoBehaviour
 {
 
     public List<Sprite> sprites;
-	private int spriteState = 0;
+	public int spriteState = 0;
 
     void Start()
     {

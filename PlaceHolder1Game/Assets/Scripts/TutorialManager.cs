@@ -3,45 +3,146 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class TutorialManager : MonoBehaviour {
-
-    public TextMeshProUGUI tutorialText;
+    public GameObject woodenFence;
+    public GameObject house;
+    public GameObject rock;
+    public GameObject bird;
+    public GameObject player;
     public GameObject mainGame;
-	
-	// Update is called once per frame
-	void FixedUpdate () {
-        float x = mainGame.transform.position.x;
-        float y = mainGame.transform.position.y;
+    public GameObject oilDrop;
+    public GameObject oilBarrel;
+    public Text tutorialText;
 
-        Debug.Log($"X: {x}, Y: {y}");
+    private bool hasJumped;
+    private bool hasDashed;
+    private bool hasBrokenRock;
+    private bool spawnedFuel;
+    private bool spawnedFence;
+    private bool spawnedHouse;
+    private bool spawnedRock;
+    private int tutorialStep = 0;
+    private PlayerController playerController;
 
-        if(x < -40 && x >= -80)
+
+    void Start()
+    {
+        playerController = mainGame.GetComponentInChildren<PlayerController>();
+    }
+
+    void Update()
+    {
+
+        if(tutorialStep < 5) player.GetComponent<GasFill>().gasBar.fillAmount = 1;
+
+        switch (tutorialStep)
         {
-            tutorialText.SetText("Tap three times to break big rocks!");
-        }else if(x < -80 && x >= -100)
-        {
-            tutorialText.SetText("Dash into houses.");
+            case 0:
+                JumpExplain();
+                break;
+            case 1:
+                DashExplain();
+                break;
+            case 2:
+                FillGasExplain();
+                break;
+            case 3:
+                BreakObstacleExplain();
+                break;
+            case 4:
+                SpawnWoodenFence();
+                break;
+            case 5:
+                SpawnHouseObstacle();
+                break;
+            case 6:
+                SpawnRock();
+                break;
         }
-        else if (x < -110 && x >= -150)
+    }
+
+    private void JumpExplain()
+    {
+        if (player.transform.position.y > 0 && tutorialStep == 0)
         {
-            tutorialText.SetText("Fill your fuel level with drops of oil or jerrycans");
+            tutorialText.text = "Swipe left to dash! You can dash into houses and kill birds if you dash into them!";
+            tutorialStep = 1;
         }
-        else if (x < -150 && x >= -180)
+    }
+
+    private void DashExplain()
+    {
+        if(tutorialStep == 1 && playerController.isDashing)
         {
-            tutorialText.SetText("Jump through rings to dash");
+            tutorialText.text = "Collect oil drops and jerrycans to fill your fuel-level!";
+            tutorialStep = 2;
         }
-        else if (x < -180 && x >= -200)
+    }
+
+    private void FillGasExplain()
+    {
+        if(tutorialStep == 2 && !spawnedFuel)
         {
-            tutorialText.SetText("Dash through birds to kill them");
+            tutorialText.text = "Collect oil to fill the fuel!";
+            oilDrop.transform.localPosition = new Vector3(player.transform.position.x - 10, -1.25f);
+            Instantiate(oilDrop);
+            oilBarrel.transform.localPosition = new Vector3(player.transform.position.x - 15, -1.25f);
+            Instantiate(oilBarrel);
+            spawnedFuel = true;
+            tutorialStep = 3;
         }
-        else if (x < -200 && x >= -220)
+    }
+
+    private void BreakObstacleExplain()
+    {
+        if(tutorialStep == 3)
         {
-            tutorialText.SetText("TUTORIAL COMPLETED!");
+            tutorialText.text = "Collect gas and oildrops to fill your fuel! Tap rocks to break them! Try out everything you learned!";
+            tutorialStep = 4;
         }
-        else if (x < -240)
+    }
+
+    private void SpawnWoodenFence()
+    {
+        if (tutorialStep == 4 && !spawnedFence)
         {
-            SceneManager.LoadScene(0);
+            woodenFence.transform.localPosition = new Vector3(player.transform.position.x - 30, -1.25f);
+            Instantiate(woodenFence);
+            hasJumped = true;
+            spawnedFence = true;
+            tutorialStep = 5;
+        }
+    }
+
+    private void SpawnHouseObstacle()
+    {
+        if (tutorialStep == 5 && hasJumped && !spawnedHouse)
+        {
+            house.transform.localPosition = new Vector3(player.transform.position.x - 45, 0f);
+            Instantiate(house);
+            spawnedHouse = true;
+            tutorialStep = 6;
+        }
+    }
+
+    private void SpawnRock()
+    {
+        if(tutorialStep == 6 && !spawnedRock)
+        {
+            rock.transform.localPosition = new Vector3(player.transform.position.x - 70, 0f);
+            Instantiate(rock);
+            tutorialStep = -1;
+            spawnedRock = true;
+        }
+    }
+
+    public void SetLevel()
+    {
+        if(tutorialStep > -1 && tutorialStep < 7)
+        {
+            tutorialStep++;
         }
     }
 }
