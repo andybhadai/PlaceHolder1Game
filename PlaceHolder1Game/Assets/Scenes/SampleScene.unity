@@ -1385,7 +1385,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gasBar: {fileID: 2025125096}
-  gasLoseAmount: 0.001
+  gasLoseAmount: 0.0005
   ringFillAmount: 0.5
   dashCostAmount: 0.05
 --- !u!1001 &1350362359
