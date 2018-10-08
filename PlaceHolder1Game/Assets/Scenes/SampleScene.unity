@@ -1620,6 +1620,11 @@ Prefab:
       propertyPath: CoinsAmountText
       value: 
       objectReference: {fileID: 300114834}
+    - target: {fileID: 95625264654097278, guid: 8790326cdb0790247b4e6f1f774f94e9,
+        type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: f67d9c05055ccfb409278fca18f0be90, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8790326cdb0790247b4e6f1f774f94e9, type: 2}
   m_IsPrefabAsset: 0
