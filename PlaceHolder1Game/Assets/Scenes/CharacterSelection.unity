@@ -1325,7 +1325,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -71.06, y: 35.8}
+  m_AnchoredPosition: {x: -71.06, y: 35.799988}
   m_SizeDelta: {x: 575, y: 240}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &630502911
@@ -3723,7 +3723,7 @@ MonoBehaviour:
   CharacterController: {fileID: 982233705}
   PriceButton: {fileID: 359048977}
   Textbox: {fileID: 1879485895}
-  price: 2
+  price: 75
   saveName: LeatherHand
   resetBought: 0
 --- !u!4 &1996860817
@@ -3855,7 +3855,7 @@ MonoBehaviour:
   CharacterController: {fileID: 982233705}
   PriceButton: {fileID: 759113577}
   Textbox: {fileID: 1916955926}
-  price: 2
+  price: 25
   saveName: ToughAsNails
   resetBought: 0
 --- !u!1 &2008905119
