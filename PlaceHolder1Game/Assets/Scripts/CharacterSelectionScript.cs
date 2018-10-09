@@ -14,6 +14,7 @@ public class CharacterSelectionScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		selected = PlayerPrefs.GetInt("SelectedCharacter", 0);
 		hovering = selected;
 		UpdateCharacter();
 
