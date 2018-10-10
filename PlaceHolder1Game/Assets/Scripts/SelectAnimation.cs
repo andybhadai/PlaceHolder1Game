@@ -10,9 +10,7 @@ public class SelectAnimation : MonoBehaviour {
 	void Start () {
 		RuntimeAnimatorController newController;
 		selectedCharacter = PlayerPrefs.GetInt("SelectedCharacter", 0);
-		// GetComponent<Animator>().runtimeAnimatorController = animations[selectedCharacter] as UnityEditor.Animations.AnimatorController;
 
-		Debug.Log(selectedCharacter);
 		switch(selectedCharacter)
 		{
 			case 0:

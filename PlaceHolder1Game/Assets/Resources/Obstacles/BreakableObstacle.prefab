@@ -36,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1645513350781984}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -77.96674, y: 0, z: 0}
+  m_LocalPosition: {x: -4.411879, y: -0.43073514, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -82,6 +82,17 @@ MonoBehaviour:
   - {fileID: 21300000, guid: da62f27df4d1d514d8efdc21fa1df7c7, type: 3}
   - {fileID: 21300004, guid: da62f27df4d1d514d8efdc21fa1df7c7, type: 3}
   spriteState: 0
+  spawnables:
+  - {fileID: 0}
+  - {fileID: 1422182078500506, guid: 151db8d323d087143b8257b0a717239b, type: 2}
+  - {fileID: 1503918488642048, guid: 8f616354de6bc5a4eb0ad64b95d548a7, type: 2}
+  - {fileID: 1276257133942734, guid: 11058530790f4d546bcf42ea851cb99c, type: 2}
+  - {fileID: 1680545304176020, guid: e7f0b1b8c557faa448c6154a44d15e76, type: 2}
+  spawnNothing: 40
+  spawnCoin: 20
+  spawnDroplet: 20
+  spawnJerrycan: 10
+  spawnObstacle: 10
 --- !u!212 &212994523593523184
 SpriteRenderer:
   m_ObjectHideFlags: 1
