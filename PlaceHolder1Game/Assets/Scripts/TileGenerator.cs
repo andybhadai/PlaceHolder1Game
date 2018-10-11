@@ -13,6 +13,8 @@ public class TileGenerator : MonoBehaviour {
     public int startTilesAmount;
     public int tileWidth;
 
+    private int lastTile;
+
 
     void Start() 
     {
@@ -29,7 +31,13 @@ public class TileGenerator : MonoBehaviour {
 
     private int RandomNumber()
     {
-        return Random.Range(0, GameObjects.Length);
+        int rdm = Random.Range(0, GameObjects.Length);
+        while(rdm == lastTile)
+        {
+            rdm = Random.Range(0, GameObjects.Length);
+        }
+        lastTile = rdm;
+        return rdm;
     }
 
     public void RemoveTile() 
@@ -42,17 +50,6 @@ public class TileGenerator : MonoBehaviour {
     public void NewTile()
     {
         generatedTiles++;
-
-        // int random = Random.Range(0, 100);
-        // if(random < obstacleChance)
-        // {
-        //     Spawn(RandomNumber());
-        // }
-        // else
-        // {
-        //     Spawn(0);
-        // }
-
         Spawn(RandomNumber());
     }
 

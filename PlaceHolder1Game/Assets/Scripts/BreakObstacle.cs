@@ -36,7 +36,6 @@ public class BreakObstacle : MonoBehaviour
 			ChangeCollider(false);
 			WhatToSpawn();
 		}
-		Debug.Log(spriteState);
     }
 
 	public void ResetSprite() 
