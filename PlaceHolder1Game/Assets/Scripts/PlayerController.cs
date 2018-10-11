@@ -54,8 +54,17 @@ public class PlayerController : MonoBehaviour
 
     public float cannonForce = 1f;
 
+
+    public AudioClip coinSound;
+    public AudioClip dropletSound;
+    public AudioClip jerricanSound;
+    public AudioClip jumpSound;
+    public AudioClip wallSound;
+    private AudioSource source;
+
     void Awake()
     {
+        source = GetComponent<AudioSource>();
         if (!PlayerPrefs.HasKey("username")) PlayerPrefs.SetString("username", Guid.NewGuid().ToString());
     }
 
@@ -199,6 +208,7 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetBool("isJumpingUp", true);
             GetComponent<Rigidbody2D>().velocity = Vector2.up * this.JumpForce;
+            source.PlayOneShot(jumpSound, 1);
         }
     }
 
@@ -220,6 +230,7 @@ public class PlayerController : MonoBehaviour
             yOnDash = transform.position.y;
             animator.SetBool("isDashing", true);
             GetComponent<GasFill>().LoseGas();
+            source.PlayOneShot(jumpSound, 1);
         }
     }
 
@@ -234,7 +245,6 @@ public class PlayerController : MonoBehaviour
 
     private bool CanDash()
     {
-        // return (!IsGrounded() && !hasDashed);
         return (!hasDashed);
     }
 
@@ -285,27 +295,30 @@ public class PlayerController : MonoBehaviour
         } else if (Collision.transform.gameObject.tag == "DashableObstacle" && isDashing == true) {
             Collision.GetComponent<BoxCollider2D>().enabled = false;
             Collision.GetComponent<SpriteRenderer>().enabled = false;
-            //Collision.transform.Translate(10f, 0, 0);
         } else if (Collision.transform.gameObject.tag == "DashableWall" && isDashing == true) {
             Collision.GetComponent<BoxCollider2D>().enabled = false;
             Collision.GetComponent<particles>().BeginParticles();
+            source.PlayOneShot(wallSound, 1);
         } else if (Collision.transform.gameObject.tag == "EndWall") {
             Collision.GetComponent<BoxCollider2D>().enabled = false;
             Collision.GetComponent<particles>().BeginParticles();
+            source.PlayOneShot(wallSound, 1);
         } else if (Collision.transform.gameObject.tag == "SuperDash") {
-            SuperDash();
-        } else if (Collision.transform.gameObject.tag == "Cannon") {
-            
+            SuperDash(); 
+            source.PlayOneShot(jumpSound, 1);
         } else if (Collision.transform.gameObject.tag == "GasBig") {
+            source.PlayOneShot(jerricanSound, 1);
             this.GetComponent<GasFill>().MaxGas();
             Collision.gameObject.SetActive(false);
         } else if (Collision.transform.gameObject.tag == "GasSmall") {
+            source.PlayOneShot(dropletSound, 1);
             this.GetComponent<GasFill>().FillGas();
             Collision.gameObject.SetActive(false);
         } else if (Collision.transform.gameObject.tag == "Coin") {
             amountOfCoins++;
             SetCoinsText();
             Collision.gameObject.SetActive(false);
+            source.PlayOneShot(coinSound, 1);
         }
         else {
             GameOver();
