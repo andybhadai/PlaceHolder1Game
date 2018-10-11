@@ -38,4 +38,9 @@ public class Settings : MonoBehaviour {
             Button.GetComponent<Image>().sprite = SoundIconOff;
         }
     }
+
+    public void CoinCheat()
+    {
+        PlayerPrefs.SetInt("amountOfCoins", 150);
+    }
 }
